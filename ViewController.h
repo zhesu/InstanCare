@@ -13,4 +13,5 @@
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 //@interface ViewController : UIViewController <CoreLocationControllerDelegate>
+
 @end
