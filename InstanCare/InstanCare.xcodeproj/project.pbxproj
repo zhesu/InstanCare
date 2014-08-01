@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1D7B92D198868A700B8BF48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D7B92C198868A700B8BF48 /* Foundation.framework */; };
+		A1D7B92F198868A700B8BF48 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D7B92E198868A700B8BF48 /* CoreGraphics.framework */; };
+		A1D7B931198868A700B8BF48 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D7B930198868A700B8BF48 /* UIKit.framework */; };
+		A1D7B937198868A700B8BF48 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1D7B935198868A700B8BF48 /* InfoPlist.strings */; };
+		A1D7B939198868A700B8BF48 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D7B938198868A700B8BF48 /* main.m */; };
+		A1D7B93D198868A700B8BF48 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D7B93C198868A700B8BF48 /* AppDelegate.m */; };
+		A1D7B940198868A700B8BF48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1D7B93E198868A700B8BF48 /* Main.storyboard */; };
+		A1D7B943198868A700B8BF48 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D7B942198868A700B8BF48 /* ViewController.m */; };
+		A1D7B945198868A700B8BF48 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1D7B944198868A700B8BF48 /* Images.xcassets */; };
+		A1D7B94C198868A700B8BF48 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D7B94B198868A700B8BF48 /* XCTest.framework */; };
+		A1D7B94D198868A700B8BF48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D7B92C198868A700B8BF48 /* Foundation.framework */; };
+		A1D7B94E198868A700B8BF48 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D7B930198868A700B8BF48 /* UIKit.framework */; };
+		A1D7B956198868A700B8BF48 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1D7B954198868A700B8BF48 /* InfoPlist.strings */; };
+		A1D7B958198868A700B8BF48 /* InstanCareTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D7B957198868A700B8BF48 /* InstanCareTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A1D7B94F198868A700B8BF48 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1D7B921198868A700B8BF48 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1D7B928198868A700B8BF48;
+			remoteInfo = InstanCare;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A1D7B929198868A700B8BF48 /* InstanCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstanCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1D7B92C198868A700B8BF48 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A1D7B92E198868A700B8BF48 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A1D7B930198868A700B8BF48 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A1D7B934198868A700B8BF48 /* InstanCare-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InstanCare-Info.plist"; sourceTree = "<group>"; };
+		A1D7B936198868A700B8BF48 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A1D7B938198868A700B8BF48 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A1D7B93A198868A700B8BF48 /* InstanCare-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InstanCare-Prefix.pch"; sourceTree = "<group>"; };
+		A1D7B93B198868A700B8BF48 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A1D7B93C198868A700B8BF48 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A1D7B93F198868A700B8BF48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A1D7B941198868A700B8BF48 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A1D7B942198868A700B8BF48 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A1D7B944198868A700B8BF48 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A1D7B94A198868A700B8BF48 /* InstanCareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstanCareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1D7B94B198868A700B8BF48 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A1D7B953198868A700B8BF48 /* InstanCareTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InstanCareTests-Info.plist"; sourceTree = "<group>"; };
+		A1D7B955198868A700B8BF48 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A1D7B957198868A700B8BF48 /* InstanCareTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstanCareTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A1D7B926198868A700B8BF48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1D7B92F198868A700B8BF48 /* CoreGraphics.framework in Frameworks */,
+				A1D7B931198868A700B8BF48 /* UIKit.framework in Frameworks */,
+				A1D7B92D198868A700B8BF48 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1D7B947198868A700B8BF48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1D7B94C198868A700B8BF48 /* XCTest.framework in Frameworks */,
+				A1D7B94E198868A700B8BF48 /* UIKit.framework in Frameworks */,
+				A1D7B94D198868A700B8BF48 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A1D7B920198868A700B8BF48 = {
+			isa = PBXGroup;
+			children = (
+				A1D7B932198868A700B8BF48 /* InstanCare */,
+				A1D7B951198868A700B8BF48 /* InstanCareTests */,
+				A1D7B92B198868A700B8BF48 /* Frameworks */,
+				A1D7B92A198868A700B8BF48 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1D7B92A198868A700B8BF48 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A1D7B929198868A700B8BF48 /* InstanCare.app */,
+				A1D7B94A198868A700B8BF48 /* InstanCareTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1D7B92B198868A700B8BF48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1D7B92C198868A700B8BF48 /* Foundation.framework */,
+				A1D7B92E198868A700B8BF48 /* CoreGraphics.framework */,
+				A1D7B930198868A700B8BF48 /* UIKit.framework */,
+				A1D7B94B198868A700B8BF48 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1D7B932198868A700B8BF48 /* InstanCare */ = {
+			isa = PBXGroup;
+			children = (
+				A1D7B93B198868A700B8BF48 /* AppDelegate.h */,
+				A1D7B93C198868A700B8BF48 /* AppDelegate.m */,
+				A1D7B93E198868A700B8BF48 /* Main.storyboard */,
+				A1D7B941198868A700B8BF48 /* ViewController.h */,
+				A1D7B942198868A700B8BF48 /* ViewController.m */,
+				A1D7B944198868A700B8BF48 /* Images.xcassets */,
+				A1D7B933198868A700B8BF48 /* Supporting Files */,
+			);
+			path = InstanCare;
+			sourceTree = "<group>";
+		};
+		A1D7B933198868A700B8BF48 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A1D7B934198868A700B8BF48 /* InstanCare-Info.plist */,
+				A1D7B935198868A700B8BF48 /* InfoPlist.strings */,
+				A1D7B938198868A700B8BF48 /* main.m */,
+				A1D7B93A198868A700B8BF48 /* InstanCare-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A1D7B951198868A700B8BF48 /* InstanCareTests */ = {
+			isa = PBXGroup;
+			children = (
+				A1D7B957198868A700B8BF48 /* InstanCareTests.m */,
+				A1D7B952198868A700B8BF48 /* Supporting Files */,
+			);
+			path = InstanCareTests;
+			sourceTree = "<group>";
+		};
+		A1D7B952198868A700B8BF48 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A1D7B953198868A700B8BF48 /* InstanCareTests-Info.plist */,
+				A1D7B954198868A700B8BF48 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1D7B928198868A700B8BF48 /* InstanCare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1D7B95B198868A700B8BF48 /* Build configuration list for PBXNativeTarget "InstanCare" */;
+			buildPhases = (
+				A1D7B925198868A700B8BF48 /* Sources */,
+				A1D7B926198868A700B8BF48 /* Frameworks */,
+				A1D7B927198868A700B8BF48 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InstanCare;
+			productName = InstanCare;
+			productReference = A1D7B929198868A700B8BF48 /* InstanCare.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A1D7B949198868A700B8BF48 /* InstanCareTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1D7B95E198868A700B8BF48 /* Build configuration list for PBXNativeTarget "InstanCareTests" */;
+			buildPhases = (
+				A1D7B946198868A700B8BF48 /* Sources */,
+				A1D7B947198868A700B8BF48 /* Frameworks */,
+				A1D7B948198868A700B8BF48 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1D7B950198868A700B8BF48 /* PBXTargetDependency */,
+			);
+			name = InstanCareTests;
+			productName = InstanCareTests;
+			productReference = A1D7B94A198868A700B8BF48 /* InstanCareTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1D7B921198868A700B8BF48 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Zhe Su";
+				TargetAttributes = {
+					A1D7B949198868A700B8BF48 = {
+						TestTargetID = A1D7B928198868A700B8BF48;
+					};
+				};
+			};
+			buildConfigurationList = A1D7B924198868A700B8BF48 /* Build configuration list for PBXProject "InstanCare" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1D7B920198868A700B8BF48;
+			productRefGroup = A1D7B92A198868A700B8BF48 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A1D7B928198868A700B8BF48 /* InstanCare */,
+				A1D7B949198868A700B8BF48 /* InstanCareTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A1D7B927198868A700B8BF48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1D7B945198868A700B8BF48 /* Images.xcassets in Resources */,
+				A1D7B937198868A700B8BF48 /* InfoPlist.strings in Resources */,
+				A1D7B940198868A700B8BF48 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1D7B948198868A700B8BF48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1D7B956198868A700B8BF48 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A1D7B925198868A700B8BF48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1D7B943198868A700B8BF48 /* ViewController.m in Sources */,
+				A1D7B93D198868A700B8BF48 /* AppDelegate.m in Sources */,
+				A1D7B939198868A700B8BF48 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1D7B946198868A700B8BF48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1D7B958198868A700B8BF48 /* InstanCareTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A1D7B950198868A700B8BF48 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1D7B928198868A700B8BF48 /* InstanCare */;
+			targetProxy = A1D7B94F198868A700B8BF48 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A1D7B935198868A700B8BF48 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1D7B936198868A700B8BF48 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A1D7B93E198868A700B8BF48 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1D7B93F198868A700B8BF48 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A1D7B954198868A700B8BF48 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1D7B955198868A700B8BF48 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A1D7B959198868A700B8BF48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A1D7B95A198868A700B8BF48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A1D7B95C198868A700B8BF48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InstanCare/InstanCare-Prefix.pch";
+				INFOPLIST_FILE = "InstanCare/InstanCare-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A1D7B95D198868A700B8BF48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InstanCare/InstanCare-Prefix.pch";
+				INFOPLIST_FILE = "InstanCare/InstanCare-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		A1D7B95F198868A700B8BF48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/InstanCare.app/InstanCare";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InstanCare/InstanCare-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "InstanCareTests/InstanCareTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		A1D7B960198868A700B8BF48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/InstanCare.app/InstanCare";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InstanCare/InstanCare-Prefix.pch";
+				INFOPLIST_FILE = "InstanCareTests/InstanCareTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A1D7B924198868A700B8BF48 /* Build configuration list for PBXProject "InstanCare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1D7B959198868A700B8BF48 /* Debug */,
+				A1D7B95A198868A700B8BF48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1D7B95B198868A700B8BF48 /* Build configuration list for PBXNativeTarget "InstanCare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1D7B95C198868A700B8BF48 /* Debug */,
+				A1D7B95D198868A700B8BF48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A1D7B95E198868A700B8BF48 /* Build configuration list for PBXNativeTarget "InstanCareTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1D7B95F198868A700B8BF48 /* Debug */,
+				A1D7B960198868A700B8BF48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1D7B921198868A700B8BF48 /* Project object */;
+}
