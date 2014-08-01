@@ -44,8 +44,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-//add a sentence
-//add another sentence
-//add a third sentence
+
 @end
 
