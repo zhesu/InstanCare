@@ -38,7 +38,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="8mJ-td-YAJ" kind="push" id="2OO-g7-Jyn"/>
+                                    <segue destination="8mJ-td-YAJ" kind="push" id="nWt-a5-aNf"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iCare" translatesAutoresizingMaskIntoConstraints="NO" id="7TX-6m-OQy">
@@ -82,9 +82,21 @@
                     <view key="view" contentMode="scaleToFill" id="Ims-bL-2F7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnW-un-ZA6">
+                                <rect key="frame" x="124" y="518" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="start again">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="FY6-zx-6bI"/>
+                    <connections>
+                        <outlet property="startWalkthrough" destination="mnW-un-ZA6" id="YRF-Rz-w4n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6i-1h-CKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
