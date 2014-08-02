@@ -71,10 +71,10 @@
             </objects>
             <point key="canvasLocation" x="462" y="149"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="YfV-vj-mgL">
             <objects>
-                <viewController id="8mJ-td-YAJ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RootViewController" id="8mJ-td-YAJ" customClass="secondViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F9K-0V-yzm"/>
                         <viewControllerLayoutGuide type="bottom" id="vgO-9J-tlY"/>
@@ -82,13 +82,67 @@
                     <view key="view" contentMode="scaleToFill" id="Ims-bL-2F7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5h5-S0-KIf">
+                                <rect key="frame" x="124" y="538" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.98431378599999997" green="0.99215692280000001" blue="0.98823535439999999" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="start again">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startWalkthrough:" destination="8mJ-td-YAJ" eventType="touchUpInside" id="QZj-zv-Tgr"/>
+                                </connections>
+                            </button>
+                        </subviews>
                     </view>
                     <navigationItem key="navigationItem" id="FY6-zx-6bI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6i-1h-CKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="837" y="156"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="6c2-Ai-0EY">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="syk-dI-L39" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ON-8v-qNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1190" y="156"/>
+        </scene>
+        <!--Page Content View Controller-->
+        <scene sceneID="KbG-S2-4zZ">
+            <objects>
+                <viewController storyboardIdentifier="PageContentViewController" id="1o3-v7-t0t" customClass="PageContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AGQ-IX-0dJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Aba-lO-nfa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bRl-w5-jsI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RTj-vE-Pbv">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUy-7W-hRd">
+                                <rect key="frame" x="139" y="128" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="RTj-vE-Pbv" id="XRQ-ob-Wuq"/>
+                        <outlet property="titleLabel" destination="gUy-7W-hRd" id="ay5-jf-CXn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YZ0-Gq-fxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1188" y="810"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ThW-zQ-dwh">
