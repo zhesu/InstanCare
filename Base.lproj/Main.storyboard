@@ -80,10 +80,11 @@
                                 </state>
                                 <connections>
                                     <action selector="startWalkthrough:" destination="8mJ-td-YAJ" eventType="touchUpInside" id="NB7-yd-IHf"/>
+                                    <segue destination="1d8-IY-7on" kind="modal" id="4QY-ek-2IW"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.98431378599999997" green="0.99215692280000001" blue="0.98823535439999999" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Doctors" id="FY6-zx-6bI"/>
                 </viewController>
@@ -91,13 +92,37 @@
             </objects>
             <point key="canvasLocation" x="837" y="156"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="veW-rr-E59">
+            <objects>
+                <viewController storyboardIdentifier="PopUpWindow" id="1d8-IY-7on" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fuO-TN-53C"/>
+                        <viewControllerLayoutGuide type="bottom" id="5lh-iK-adj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3xb-G4-97f">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PVs-cF-Beg">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gi6-oW-bFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1188" y="-554"/>
+        </scene>
         <!--Page View Controller-->
         <scene sceneID="6c2-Ai-0EY">
             <objects>
                 <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="syk-dI-L39" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ON-8v-qNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1190" y="156"/>
+            <point key="canvasLocation" x="1358" y="156"/>
         </scene>
         <!--Page Content View Controller-->
         <scene sceneID="KbG-S2-4zZ">
@@ -125,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YZ0-Gq-fxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1188" y="810"/>
+            <point key="canvasLocation" x="1364" y="810"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ThW-zQ-dwh">
