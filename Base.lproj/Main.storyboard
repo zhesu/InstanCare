@@ -79,8 +79,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="startWalkthrough:" destination="8mJ-td-YAJ" eventType="touchUpInside" id="NB7-yd-IHf"/>
-                                    <segue destination="1d8-IY-7on" kind="modal" id="4QY-ek-2IW"/>
+                                    <action selector="startWalkthrough:" destination="8mJ-td-YAJ" eventType="touchUpInside" id="vBd-hF-QSh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -91,30 +90,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6i-1h-CKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="837" y="156"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="veW-rr-E59">
-            <objects>
-                <viewController storyboardIdentifier="PopUpWindow" id="1d8-IY-7on" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fuO-TN-53C"/>
-                        <viewControllerLayoutGuide type="bottom" id="5lh-iK-adj"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3xb-G4-97f">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PVs-cF-Beg">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gi6-oW-bFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1188" y="-554"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="6c2-Ai-0EY">

@@ -63,11 +63,6 @@
 }
 */
 
-- (IBAction)startWalkthrough:(id)sender {
-    PageContentViewController *startingViewController = [self viewControllerAtIndex:0];
-    NSArray *viewControllers = @[startingViewController];
-    [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
-}
 
 - (PageContentViewController *)viewControllerAtIndex:(NSUInteger)index
 {
@@ -111,5 +106,12 @@
         return nil;
     }
     return [self viewControllerAtIndex:index];
+}
+
+- (IBAction)startWalkthrough:(id)sender {
+ //   PageContentViewController *startingViewController = [self viewControllerAtIndex:0];
+ //   NSArray *viewControllers = @[startingViewController];
+ //   [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
+    NSLog(@"string");
 }
 @end
