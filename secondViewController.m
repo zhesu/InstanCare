@@ -7,6 +7,7 @@
 //
 
 #import "secondViewController.h"
+#import "PopupViewController.h"
 
 @interface secondViewController ()
 
@@ -113,5 +114,8 @@
  //   NSArray *viewControllers = @[startingViewController];
  //   [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
     NSLog(@"string");
+    PopupViewController *myViewController = [[PopupViewController alloc] init];
+    
+    [self presentViewController:myViewController animated:YES completion:nil];
 }
 @end
