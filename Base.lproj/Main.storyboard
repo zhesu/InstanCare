@@ -130,7 +130,7 @@
             </objects>
             <point key="canvasLocation" x="1364" y="810"/>
         </scene>
-        <!--Signup View Controller - Create Account Step 1-->
+        <!--Signup View Controller - Create Account-->
         <scene sceneID="6P4-VZ-XLQ">
             <objects>
                 <viewController id="2Wj-pq-x5T" customClass="signupViewController" sceneMemberID="viewController">
@@ -142,7 +142,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7cn-jY-PoA">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7cn-jY-PoA">
                                 <rect key="frame" x="20" y="97" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -151,8 +151,62 @@
                                     <action selector="backgroundClick:" destination="k05-3r-MGT" eventType="editingDidEndOnExit" id="yPG-Wy-DeZ"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rrB-OY-rG6">
-                                <rect key="frame" x="20" y="150" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="First name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GBo-wq-lq3">
+                                <rect key="frame" x="20" y="200" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="backgroundClick:" destination="k05-3r-MGT" eventType="editingDidEndOnExit" id="Uo5-pc-4ga"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Last name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UHh-Se-wwM">
+                                <rect key="frame" x="20" y="229" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="backgroundClick:" destination="k05-3r-MGT" eventType="editingDidEndOnExit" id="c2Z-Fg-OWM"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Mobile e.g. 1-###-####" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="53a-hi-alC">
+                                <rect key="frame" x="20" y="258" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="backgroundClick:" destination="k05-3r-MGT" eventType="editingDidEndOnExit" id="Fb7-GU-VDm"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Date of birth mm/dd/yyyy" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gft-Gv-nTi">
+                                <rect key="frame" x="20" y="286" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="backgroundClick:" destination="k05-3r-MGT" eventType="editingDidEndOnExit" id="Fp2-E6-Lqw"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Primary doctor (Optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jaj-v8-k13">
+                                <rect key="frame" x="20" y="315" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="backgroundClick:" destination="k05-3r-MGT" eventType="editingDidEndOnExit" id="xgA-zo-Pzg"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Male/Female" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XZ1-l2-hcF">
+                                <rect key="frame" x="20" y="344" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="backgroundClick:" destination="k05-3r-MGT" eventType="editingDidEndOnExit" id="FkY-lW-fTa"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rrB-OY-rG6">
+                                <rect key="frame" x="20" y="126" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -160,8 +214,8 @@
                                     <action selector="backgroundClick:" destination="k05-3r-MGT" eventType="editingDidEndOnExit" id="weh-JX-U3f"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fGD-3l-yBb">
-                                <rect key="frame" x="20" y="205" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fGD-3l-yBb">
+                                <rect key="frame" x="20" y="155" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -172,8 +226,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Create Account Step 1" id="4wd-II-JSN">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="NmP-Jk-iSd">
+                    <navigationItem key="navigationItem" title="Create Account" id="4wd-II-JSN">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="r13-eT-nu8"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="NmP-Jk-iSd">
                             <connections>
                                 <action selector="signUpAction:" destination="2Wj-pq-x5T" id="Lm4-WT-bNV"/>
                             </connections>
@@ -183,94 +238,12 @@
                         <outlet property="emailField" destination="7cn-jY-PoA" id="iDo-qJ-ccX"/>
                         <outlet property="passwordField" destination="rrB-OY-rG6" id="G1a-KO-P0S"/>
                         <outlet property="reEnterPasswordField" destination="fGD-3l-yBb" id="IaP-sf-ZBG"/>
-                        <segue destination="3g6-lo-giW" kind="push" identifier="step2" id="hwL-dw-yDH"/>
+                        <segue destination="mOk-1T-Z0U" kind="push" identifier="signup" id="eUS-e5-dYB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6v-GO-yw8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="337" y="-548"/>
-        </scene>
-        <!--View Controller - Create Account Step 2-->
-        <scene sceneID="ewL-lW-1Ti">
-            <objects>
-                <viewController id="3g6-lo-giW" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="khE-OF-Tju"/>
-                        <viewControllerLayoutGuide type="bottom" id="fqg-On-dz1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dfw-aU-ltL">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4wh-2S-6va">
-                                <rect key="frame" x="20" y="33" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="backgroundClick:" destination="k05-3r-MGT" eventType="editingDidEndOnExit" id="7Ph-u7-pAJ"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rsx-op-CFG">
-                                <rect key="frame" x="20" y="87" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="backgroundClick:" destination="k05-3r-MGT" eventType="editingDidEndOnExit" id="4NU-7r-dvY"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mobile e.g. 1-###-###-####" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XWc-X2-6SN">
-                                <rect key="frame" x="20" y="139" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="backgroundClick:" destination="k05-3r-MGT" eventType="editingDidEndOnExit" id="u5L-q9-TOn"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date of birth mm/dd/yyyy" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F0u-Bc-k3t">
-                                <rect key="frame" x="20" y="191" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="backgroundClick:" destination="k05-3r-MGT" eventType="editingDidEndOnExit" id="TZ7-0r-tuR"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Primary doctor (Optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ewM-Ju-OMB">
-                                <rect key="frame" x="20" y="244" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="backgroundClick:" destination="k05-3r-MGT" eventType="editingDidEndOnExit" id="zeu-U0-If5"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Male/Female" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Re4-JW-hkc">
-                                <rect key="frame" x="20" y="298" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="backgroundClick:" destination="k05-3r-MGT" eventType="editingDidEndOnExit" id="tjf-gE-CCL"/>
-                                </connections>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Create Account Step 2" id="GID-zB-KvY">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="le9-wa-5sb"/>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="kRk-Tz-6do">
-                            <connections>
-                                <segue destination="mOk-1T-Z0U" kind="modal" identifier="signup" modalTransitionStyle="flipHorizontal" id="ihF-Nl-GMe"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wrR-Ec-UYE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="753" y="-548"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="pRF-H0-iQ2">
@@ -345,6 +318,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mOk-1T-Z0U" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="JD3-FN-sXY"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tkw-MA-hbb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -389,6 +363,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ceu-vK-lZV"/>
+        <segue reference="eUS-e5-dYB"/>
     </inferredMetricsTieBreakers>
 </document>

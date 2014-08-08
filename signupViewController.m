@@ -39,7 +39,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     PFUser *user = [PFUser currentUser];
     if (user.username !=nil) {
-        [self performSegueWithIdentifier:@"step2" sender:self];
+        [self performSegueWithIdentifier:@"signup" sender:self];
     }
 }
 
@@ -98,7 +98,7 @@
            // _passwordField.text = nil;
            // _reEnterPasswordField.text = nil;
            // _emailField.text = nil;
-           [self performSegueWithIdentifier:@"step2" sender:self];
+           [self performSegueWithIdentifier:@"signup" sender:self];
         }
         else {
             NSLog(@"There was an error in registration");
