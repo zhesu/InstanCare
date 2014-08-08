@@ -7,12 +7,15 @@
 //
 
 #import "AppDelegate.h"
-
+#import <Parse/Parse.h>
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [Parse setApplicationId:@"nApAsA33UhTBwI0mWotrIS4d2fO3C2mIDtj2Vto6"
+                  clientKey:@"eNMWXtuS2sjI638nG8NKcMLco3aLuqoaLoBQuYUm"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     UIPageControl *pageControl = [UIPageControl appearance];
     pageControl.pageIndicatorTintColor = [UIColor yellowColor];
     pageControl.currentPageIndicatorTintColor = [UIColor yellowColor];
