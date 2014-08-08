@@ -79,13 +79,16 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="startWalkthrough:" destination="8mJ-td-YAJ" eventType="touchUpInside" id="vBd-hF-QSh"/>
+                                    <action selector="showPopUp:" destination="8mJ-td-YAJ" eventType="touchUpInside" id="bG9-pd-eRM"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Doctors" id="FY6-zx-6bI"/>
+                    <connections>
+                        <outlet property="showPopupBtn" destination="dPi-YZ-iRy" id="fhC-gY-7Qc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6i-1h-CKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "PageContentViewController.h"
+#import "PopUpViewController.h"
+#import <QuartzCore/QuartzCore.h>
+
 @interface secondViewController : UIViewController <UIPageViewControllerDataSource>
 
-- (IBAction)startWalkthrough:(id)sender;
+//- (IBAction)startWalkthrough:(id)sender;
 @property (strong, nonatomic) UIPageViewController *pageViewController;
 @property (strong, nonatomic) NSArray *pageTitles;
 @property (strong, nonatomic) NSArray *pageImages;
+@property (weak, nonatomic) IBOutlet UIButton *showPopupBtn;
+@property (strong, nonatomic) PopUpViewController *popViewController;
 
 @end

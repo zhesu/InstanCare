@@ -7,13 +7,13 @@
 //
 
 #import "secondViewController.h"
-#import "PopupViewController.h"
 
 @interface secondViewController ()
 
 @end
 
 @implementation secondViewController
+@synthesize showPopupBtn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     // Do any additional setup after loading the view.
     _pageTitles = @[@"Over 200 Tips and Tricks", @"Discover Hidden Features", @"Bookmark Favorite Tip", @"Free Regular Update"];
     _pageImages = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png"];
@@ -46,6 +47,31 @@
     [self.pageViewController didMoveToParentViewController:self];
 
 }
+
+- (IBAction)showPopUp:(id)sender {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
+        self.popViewController = [[PopUpViewController alloc] initWithNibName:@"PopUpViewController_iPad" bundle:nil];
+        [self.popViewController setTitle:@"This is a popup view"];
+        
+        [self.popViewController showInView:self.view withImage:[UIImage imageNamed:@"typpzdemo"] withMessage:@"You just triggered a great popup window" animated:YES];
+    } else {
+        self.popViewController = [[PopUpViewController alloc] initWithNibName:@"PopUpViewController" bundle:nil];
+        [self.popViewController setTitle:@"This is a popup view"];
+        
+        [self.popViewController showInView:self.view withImage:[UIImage imageNamed:@"DTL"] withMessage:@"Appointment with Daniel Turner-Lloveras, MD" animated:YES];
+    }
+}
+ - (void)setRoundedBorder:(float)radius borderWidth:(float)borderWidth color:(UIColor*)color forButton:(UIButton *)button
+ {
+ CALayer * l = [button layer];
+ [l setMasksToBounds:YES];
+ [l setCornerRadius:radius];
+ // You can even add a border
+ [l setBorderWidth:borderWidth];
+ [l setBorderColor:[color CGColor]];
+ }
+ 
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -109,13 +135,13 @@
     return [self viewControllerAtIndex:index];
 }
 
-- (IBAction)startWalkthrough:(id)sender {
+/*- (IBAction)startWalkthrough:(id)sender {
  //   PageContentViewController *startingViewController = [self viewControllerAtIndex:0];
  //   NSArray *viewControllers = @[startingViewController];
  //   [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
     NSLog(@"string");
-    PopupViewController *myViewController = [[PopupViewController alloc] init];
+    PopUpViewController *myViewController = [[PopUpViewController alloc] init];
     
     [self presentViewController:myViewController animated:YES completion:nil];
-}
+} */
 @end
