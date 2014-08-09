@@ -36,12 +36,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    PFUser *user = [PFUser currentUser];
-    if (user.username !=nil) {
-        [self performSegueWithIdentifier:@"signup" sender:self];
-    }
-}
 
 /*
 #pragma mark - Navigation
@@ -75,7 +69,8 @@
 }
 
 - (void) checkFieldsComplete {
-    if ([_emailField.text isEqualToString:@""] || [_passwordField.text isEqualToString:@""] || [_reEnterPasswordField.text isEqualToString:@""] || [_firstName.text isEqualToString:@""] || [_lastName.text isEqualToString:@""] || [_phoneNumber.text isEqualToString:@""] || [_dateOfBirth.text isEqualToString:@""] || [_gender.text isEqualToString:@""]) {
+    //if ([_emailField.text isEqualToString:@""] || [_passwordField.text isEqualToString:@""] || [_reEnterPasswordField.text isEqualToString:@""] || [_firstName.text isEqualToString:@""] || [_lastName.text isEqualToString:@""] || [_phoneNumber.text isEqualToString:@""] || [_dateOfBirth.text isEqualToString:@""] || [_gender.text isEqualToString:@""]) {
+    if ([_emailField.text isEqualToString:@""] || [_passwordField.text isEqualToString:@""] || [_reEnterPasswordField.text isEqualToString:@""]) {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Oooopss!" message:@"You need to complete all fields" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
     }

@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-#import <Parse/Parse.h>
+
 @interface LoginViewController ()
 
 @end
@@ -34,7 +34,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (void)viewDidAppear:(BOOL)animated {
+    PFUser *user = [PFUser currentUser];
+    if (user.username !=nil) {
+        [self performSegueWithIdentifier:@"login" sender:self];
+    }
+}
 /*
 #pragma mark - Navigation
 
