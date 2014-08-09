@@ -238,7 +238,7 @@
                         <outlet property="emailField" destination="7cn-jY-PoA" id="iDo-qJ-ccX"/>
                         <outlet property="passwordField" destination="rrB-OY-rG6" id="G1a-KO-P0S"/>
                         <outlet property="reEnterPasswordField" destination="fGD-3l-yBb" id="IaP-sf-ZBG"/>
-                        <segue destination="mOk-1T-Z0U" kind="push" identifier="signup" id="eUS-e5-dYB"/>
+                        <segue destination="mOk-1T-Z0U" kind="modal" identifier="signup" modalTransitionStyle="flipHorizontal" id="eUS-e5-dYB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6v-GO-yw8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -363,6 +363,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="eUS-e5-dYB"/>
+        <segue reference="ceu-vK-lZV"/>
     </inferredMetricsTieBreakers>
 </document>

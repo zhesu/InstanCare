@@ -35,14 +35,14 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+/*
 - (void)viewDidAppear:(BOOL)animated {
     PFUser *user = [PFUser currentUser];
     if (user.username !=nil) {
         [self performSegueWithIdentifier:@"signup" sender:self];
     }
 }
-
+*/
 /*
 #pragma mark - Navigation
 
