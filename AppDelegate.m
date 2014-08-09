@@ -17,9 +17,9 @@
                   clientKey:@"eNMWXtuS2sjI638nG8NKcMLco3aLuqoaLoBQuYUm"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     UIPageControl *pageControl = [UIPageControl appearance];
-    pageControl.pageIndicatorTintColor = [UIColor blackColor];
-    pageControl.currentPageIndicatorTintColor = [UIColor redColor];
-    pageControl.backgroundColor = [UIColor yellowColor];
+    pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+    pageControl.backgroundColor = [UIColor whiteColor];
     return YES;
 }
 							
