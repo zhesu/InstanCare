@@ -33,9 +33,9 @@
     mapView.region = viewRegion;
 
     // Plot pin
-    MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
+ /*   MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
     pin.coordinate = coordinate;
-    [self.mapView addAnnotation:pin];
+    [self.mapView addAnnotation:pin];*/
  
 }
 
