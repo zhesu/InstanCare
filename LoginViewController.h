@@ -16,6 +16,6 @@
 - (IBAction)signin:(id)sender;
 
 - (IBAction)backgroundClick:(id)sender;
-- (IBAction)signup:(id)sender;
+
 
 @end

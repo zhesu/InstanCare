@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-
+#import <Parse/Parse.h>
 @interface LoginViewController ()
 
 @end
@@ -65,6 +65,19 @@
     }
     else {
         
+        [PFUser logInWithUsernameInBackground:_emailfield.text password:_passwordfield.text block:^(PFUser *user, NSError *error) {
+            if (!error) {
+                NSLog(@"Login user!");
+                _emailfield.text = nil;
+                _passwordfield.text = nil;
+                [self performSegueWithIdentifier:@"login" sender:self];
+            }
+            if (error) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ooops!" message:@"Sorry we had a problem logging you in" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alert show];
+            }
+        }];
+
     }
 }
 

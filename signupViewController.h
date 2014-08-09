@@ -13,5 +13,13 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UITextField *reEnterPasswordField;
+@property (weak, nonatomic) IBOutlet UITextField *firstName;
+@property (weak, nonatomic) IBOutlet UITextField *lastName;
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumber;
+@property (weak, nonatomic) IBOutlet UITextField *dateOfBirth;
+@property (weak, nonatomic) IBOutlet UITextField *primaryDoctor;
+@property (weak, nonatomic) IBOutlet UITextField *gender;
+- (IBAction)backgroudClick:(id)sender;
+
 - (IBAction)signUpAction:(id)sender;
 @end
