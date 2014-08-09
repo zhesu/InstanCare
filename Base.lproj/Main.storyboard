@@ -390,17 +390,19 @@
                     <connections>
                         <outlet property="emailfield" destination="NK3-2Z-EHX" id="S6c-O3-4eb"/>
                         <outlet property="passwordfield" destination="wyX-3b-X0R" id="w2G-CU-RWr"/>
-                        <segue destination="mOk-1T-Z0U" kind="modal" identifier="login" modalTransitionStyle="flipHorizontal" id="ceu-vK-lZV"/>
+                        <segue destination="mOk-1T-Z0U" kind="modal" identifier="login2" modalTransitionStyle="flipHorizontal" id="ceu-vK-lZV"/>
+                        <segue destination="YNo-I9-G1t" kind="modal" identifier="login" modalTransitionStyle="flipHorizontal" id="K8W-Pq-xan"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dis-AA-NzK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="149"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - Request-->
         <scene sceneID="ThW-zQ-dwh">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mOk-1T-Z0U" sceneMemberID="viewController">
+                <navigationController title="Request" automaticallyAdjustsScrollViewInsets="NO" id="mOk-1T-Z0U" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="lvK-Lb-p2n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tkw-MA-hbb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -414,6 +416,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VaP-dz-bUJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="567" y="149"/>
+        </scene>
+        <!--Logout View Controller - Logout-->
+        <scene sceneID="rDh-YF-Hy4">
+            <objects>
+                <viewController title="Logout" id="W59-5s-FIj" customClass="LogoutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c94-xk-UQo"/>
+                        <viewControllerLayoutGuide type="bottom" id="aZp-fc-jmm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="Logout" id="P4E-Uo-7rF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cqx-4u-hl1">
+                                <rect key="frame" x="20" y="389" width="280" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutButton:" destination="W59-5s-FIj" eventType="touchUpInside" id="ArQ-WH-A5K"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="7Xe-4V-pnS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1GR-Wg-i3U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="570" y="853"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="zNN-ti-Ho3">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="YNo-I9-G1t" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="xOV-ri-rDO">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="mOk-1T-Z0U" kind="relationship" relationship="viewControllers" id="9os-Tm-jWP"/>
+                        <segue destination="W59-5s-FIj" kind="relationship" relationship="viewControllers" id="R5l-vi-i8Z"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ds4-es-y1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="56" y="935"/>
+        </scene>
+        <!--View Controller - Item 2-->
+        <scene sceneID="PHl-vO-XfF">
+            <objects>
+                <viewController id="DKX-kB-roC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gud-rj-5Ny"/>
+                        <viewControllerLayoutGuide type="bottom" id="d7l-2Q-15f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tm5-FH-Qhq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="dEH-Yq-zeS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UNF-CZ-Gj0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="570" y="1505"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="eEi-9e-mB9">
@@ -447,6 +518,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ceu-vK-lZV"/>
+        <segue reference="9os-Tm-jWP"/>
     </inferredMetricsTieBreakers>
 </document>
