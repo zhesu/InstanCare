@@ -15,22 +15,14 @@
 @implementation secondViewController
 @synthesize showPopupBtn;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    // Do any additional setup after loading the view.
+	// Create the data model
     _pageTitles = @[@"Over 200 Tips and Tricks", @"Discover Hidden Features", @"Bookmark Favorite Tip", @"Free Regular Update"];
     _pageImages = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png"];
+    
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
     self.pageViewController.dataSource = self;
@@ -46,7 +38,25 @@
     [self.view addSubview:_pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
 
+
 }
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*- (IBAction)startWalkthrough:(id)sender {
+ //   PageContentViewController *startingViewController = [self viewControllerAtIndex:0];
+ //   NSArray *viewControllers = @[startingViewController];
+ //   [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
+ NSLog(@"string");
+ PopUpViewController *myViewController = [[PopUpViewController alloc] init];
+ 
+ [self presentViewController:myViewController animated:YES completion:nil];
+ } */
+
 
 - (IBAction)showPopUp:(id)sender {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
@@ -61,6 +71,7 @@
         [self.popViewController showInView:self.view withImage:[UIImage imageNamed:@"DTL"] withMessage:@"Appointment with Daniel Turner-Lloveras, MD" animated:YES];
     }
 }
+
  - (void)setRoundedBorder:(float)radius borderWidth:(float)borderWidth color:(UIColor*)color forButton:(UIButton *)button
  {
  CALayer * l = [button layer];
@@ -70,26 +81,6 @@
  [l setBorderWidth:borderWidth];
  [l setBorderColor:[color CGColor]];
  }
- 
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 
 - (PageContentViewController *)viewControllerAtIndex:(NSUInteger)index
 {
@@ -108,9 +99,9 @@
 
 #pragma mark - Page View Controller Data Source
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)secondviewController
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
-    NSUInteger index = ((PageContentViewController*) secondviewController).pageIndex;
+    NSUInteger index = ((PageContentViewController*) viewController).pageIndex;
     
     if ((index == 0) || (index == NSNotFound)) {
         return nil;
@@ -120,9 +111,9 @@
     return [self viewControllerAtIndex:index];
 }
 
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)secondviewController
+- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
-    NSUInteger index = ((PageContentViewController*) secondviewController).pageIndex;
+    NSUInteger index = ((PageContentViewController*) viewController).pageIndex;
     
     if (index == NSNotFound) {
         return nil;
@@ -135,13 +126,15 @@
     return [self viewControllerAtIndex:index];
 }
 
-/*- (IBAction)startWalkthrough:(id)sender {
- //   PageContentViewController *startingViewController = [self viewControllerAtIndex:0];
- //   NSArray *viewControllers = @[startingViewController];
- //   [self.pageViewController setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionReverse animated:NO completion:nil];
-    NSLog(@"string");
-    PopUpViewController *myViewController = [[PopUpViewController alloc] init];
-    
-    [self presentViewController:myViewController animated:YES completion:nil];
-} */
+- (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
+{
+    return [self.pageTitles count];
+}
+
+- (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController
+{
+    return 0;
+}
+
+
 @end

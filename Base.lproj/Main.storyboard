@@ -32,7 +32,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="8mJ-td-YAJ" kind="push" id="2OO-g7-Jyn"/>
+                                    <segue destination="8mJ-td-YAJ" kind="modal" modalTransitionStyle="flipHorizontal" id="2OO-g7-Jyn"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iCare" translatesAutoresizingMaskIntoConstraints="NO" id="7TX-6m-OQy">
@@ -71,7 +71,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPi-YZ-iRy">
-                                <rect key="frame" x="8" y="530" width="304" height="29"/>
+                                <rect key="frame" x="8" y="524" width="304" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Request">
@@ -85,7 +85,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Doctors" id="FY6-zx-6bI"/>
+                    <navigationItem key="navigationItem" title="Doctors" id="FY6-zx-6bI" customClass="UI"/>
                     <connections>
                         <outlet property="showPopupBtn" destination="dPi-YZ-iRy" id="fhC-gY-7Qc"/>
                     </connections>
@@ -97,7 +97,9 @@
         <!--Page View Controller-->
         <scene sceneID="6c2-Ai-0EY">
             <objects>
-                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="syk-dI-L39" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="PageViewController" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="syk-dI-L39" sceneMemberID="viewController">
+                    <size key="freeformSize" width="320" height="400"/>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ON-8v-qNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1884" y="156"/>
@@ -128,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YZ0-Gq-fxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1364" y="810"/>
+            <point key="canvasLocation" x="1884" y="828"/>
         </scene>
         <!--Signup View Controller - Authorization-->
         <scene sceneID="6P4-VZ-XLQ">
@@ -171,7 +173,7 @@
                                 <rect key="frame" x="30" y="85" width="260" height="271"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">By clicking the “Sign Up” button below, I authorize my health care providers responding to requests made via the InstanCare app (collectively, “Providers”) to provide my medical and other information (collectively, “Information”) to techCare, Inc. and its agents (collectively, “techCare”) so that techCare may use and disclose the Information to: implement, develop, improve and offer the InstanCare app as well as new products and services; provide me with personalized offers in connection with my use of the InstanCare app and other marketing communications that may be of interest to me; and perform other purposes at my request or as described in the InstanCare Privacy Policy agreed to by me. I understand that, once my Information has been disclosed to techCare, federal privacy laws may no longer protect it, although techCare agrees to use my Information only for the purposes authorized by me or as permitted by law. I understand that agreeing to this authorization is voluntary and if I do not agree it will not affect my ability to obtain health care services through channels other than the InstanCare app, but I will not be able to complete the sign up process and use the InstanCare app to connect with prospective Providers. I may withdraw this authorization at any time by notifying techCare in writing at InstanCare@getpager.com. Withdrawal of this authorization will end (i) my ability to connect with prospective Providers via the InstanCare app, and (ii) further uses and disclosures of my Information by techCare, except to the extent uses and disclosures have been made in reliance upon this authorization and as permitted by applicable law. This authorization expires when I uninstall the InstanCare app from each of my devices unless I withdraw it earlier. I am entitled to receive a copy of this authorization. I understand that my Providers and/or techCare may receive remuneration in exchange for my Information and/or providing services to me.</mutableString>
+                                <string key="text">By clicking the “Sign Up” button below, I authorize my health care providers responding to requests made via the InstanCare app (collectively, “Providers”) to provide my medical and other information (collectively, “Information”) to techCare, Inc. and its agents (collectively, “techCare”) so that techCare may use and disclose the Information to: implement, develop, improve and offer the InstanCare app as well as new products and services; provide me with personalized offers in connection with my use of the InstanCare app and other marketing communications that may be of interest to me; and perform other purposes at my request or as described in the InstanCare Privacy Policy agreed to by me. I understand that, once my Information has been disclosed to techCare, federal privacy laws may no longer protect it, although techCare agrees to use my Information only for the purposes authorized by me or as permitted by law. I understand that agreeing to this authorization is voluntary and if I do not agree it will not affect my ability to obtain health care services through channels other than the InstanCare app, but I will not be able to complete the sign up process and use the InstanCare app to connect with prospective Providers. I may withdraw this authorization at any time by notifying techCare in writing at InstanCare@getpager.com. Withdrawal of this authorization will end (i) my ability to connect with prospective Providers via the InstanCare app, and (ii) further uses and disclosures of my Information by techCare, except to the extent uses and disclosures have been made in reliance upon this authorization and as permitted by applicable law. This authorization expires when I uninstall the InstanCare app from each of my devices unless I withdraw it earlier. I am entitled to receive a copy of this authorization. I understand that my Providers and/or techCare may receive remuneration in exchange for my Information and/or providing services to me.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
