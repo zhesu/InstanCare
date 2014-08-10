@@ -13,7 +13,7 @@
 @end
 
 @implementation secondViewController
-@synthesize showPopupBtn;
+//@synthesize showPopupBtn;
 
 - (void)viewDidLoad
 {
@@ -58,29 +58,7 @@
  } */
 
 
-- (IBAction)showPopUp:(id)sender {
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-        self.popViewController = [[PopUpViewController alloc] initWithNibName:@"PopUpViewController_iPad" bundle:nil];
-        [self.popViewController setTitle:@"This is a popup view"];
-        
-        [self.popViewController showInView:self.view withImage:[UIImage imageNamed:@"typpzdemo"] withMessage:@"You just triggered a great popup window" animated:YES];
-    } else {
-        self.popViewController = [[PopUpViewController alloc] initWithNibName:@"PopUpViewController" bundle:nil];
-        [self.popViewController setTitle:@"This is a popup view"];
-        
-        [self.popViewController showInView:self.view withImage:[UIImage imageNamed:@"DTL"] withMessage:@"Appointment with Daniel Turner-Lloveras, MD" animated:YES];
-    }
-}
 
- - (void)setRoundedBorder:(float)radius borderWidth:(float)borderWidth color:(UIColor*)color forButton:(UIButton *)button
- {
- CALayer * l = [button layer];
- [l setMasksToBounds:YES];
- [l setCornerRadius:radius];
- // You can even add a border
- [l setBorderWidth:borderWidth];
- [l setBorderColor:[color CGColor]];
- }
 
 - (PageContentViewController *)viewControllerAtIndex:(NSUInteger)index
 {
