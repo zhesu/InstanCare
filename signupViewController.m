@@ -52,6 +52,7 @@
 - (IBAction)backgroudClick:(id)sender {
     [_emailField resignFirstResponder];
     [_passwordField resignFirstResponder];
+    [_reEnterPasswordField resignFirstResponder];
     [_firstName resignFirstResponder];
     [_lastName resignFirstResponder];
     [_phoneNumber resignFirstResponder];
@@ -107,6 +108,7 @@
             NSLog(@"Registration success!");
             _emailField.text = nil;
             _passwordField.text = nil;
+            _reEnterPasswordField.text = nil;
             _firstName.text = nil;
             _lastName.text = nil;
             _phoneNumber.text = nil;
