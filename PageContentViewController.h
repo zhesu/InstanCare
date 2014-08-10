@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PopUpViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface PageContentViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
@@ -15,5 +17,7 @@
 @property NSUInteger pageIndex;
 @property NSString *titleText;
 @property NSString *imageFile;
+@property (weak, nonatomic) IBOutlet UIButton *showPopupBtn;
+@property (strong, nonatomic) PopUpViewController *popViewController;
 
 @end
