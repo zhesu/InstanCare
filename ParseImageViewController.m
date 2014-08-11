@@ -40,7 +40,25 @@
 
 - (void)queryParseMethod {
     PFQuery *query = [PFQuery queryWithClassName:@"doctorData"];
-    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                 NSLog(@"%@", objects);
+        if (!error) {
+            imageFilesArray = [[NSArray alloc] initWithArray:objects];
+        }
+    }];
+    PFObject *tempObject = [imageFilesArray objectAtIndex:1];
+    PFFile *imageFile = [tempObject objectForKey:@"imageFile"];
+    
+    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            NSLog(@"%@", data);
+            parseImage.image = [UIImage imageWithData:data];
+            
+        }
+        
+    }];
+
+/*    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
       NSLog(@"%@", object);
        // NSLog(@"Retrieved data");
 
@@ -52,7 +70,7 @@
         self.Specialties.text = [object objectForKey:@"Specialties"];
         self.Education.text = [object objectForKey:@"Education"];
         self.Fees.text = [object objectForKey:@"Fees"];
-        if (!error) {
+        if (!error) { */
       /*      PFFile *fullName = [object objectForKey:@"FirstName"];// @"LastName"];
             [fullName getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                 if (!error) {
@@ -60,7 +78,7 @@
                   //  parseImage.text = [UIImage imageWithData:data];
                 }
             }];*/
-        
+/*
             PFFile *imageFile = [object objectForKey:@"imageFile"];
 //            [parseImage setImage:file];
             [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
@@ -68,7 +86,7 @@
                     parseImage.image = [UIImage imageWithData:data];
                 }
             }];
-        }
+        } */
      
     //[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
     //[query getObjectInBackgroundWithId:@"objectid"
@@ -80,7 +98,7 @@
         }*/
         // do your thing with text
       //  [parseImage reloadData];
-    }];
+//    }];
 }
 
 
