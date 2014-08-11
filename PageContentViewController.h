@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "PopUpViewController.h"
 #import <QuartzCore/QuartzCore.h>
+//#import <Parse/Parse.h>
 
-@interface PageContentViewController : UIViewController
+@interface PageContentViewController : UIViewController {
+    NSArray *imageFilesArray;
+    NSMutableArray *imageArray;
+}
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
@@ -19,5 +23,11 @@
 @property NSString *imageFile;
 @property (weak, nonatomic) IBOutlet UIButton *showPopupBtn;
 @property (strong, nonatomic) PopUpViewController *popViewController;
+@property (weak, nonatomic) IBOutlet UILabel *Treats;
+@property (weak, nonatomic) IBOutlet UILabel *Specialties;
+@property (weak, nonatomic) IBOutlet UILabel *NameTitle;
+
+@property (weak, nonatomic) IBOutlet UILabel *Education;
+@property (weak, nonatomic) IBOutlet UILabel *Fees;
 
 @end

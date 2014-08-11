@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "PageContentViewController.h"
+#import <Parse/Parse.h>
 
-
-@interface secondViewController : UIViewController <UIPageViewControllerDataSource>
+@interface secondViewController : UIViewController <UIPageViewControllerDataSource> {
+      NSArray *imageFilesArray;
+      NSMutableArray *imageArray;
+}
 
 //- (IBAction)startWalkthrough:(id)sender;
 @property (strong, nonatomic) UIPageViewController *pageViewController;

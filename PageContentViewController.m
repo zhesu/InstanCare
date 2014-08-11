@@ -19,6 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+   // [self performSelector:@selector(queryParseMethod)];
    // [self setRoundedBorder:5 borderWidth:1 color:[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] forButton:showPopupBtn];
 
     // Do any additional setup after loading the view.
@@ -56,6 +57,38 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)queryParseMethod {
+    PFQuery *query = [PFQuery queryWithClassName:@"doctorData"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        //NSLog(@"%@", objects);
+        if (!error) {
+            imageFilesArray = [[NSArray alloc] initWithArray:objects];
+            //NSLog(@"%lu", (unsigned long)imageFilesArray.count);
+        }
+        //NSLog(@"%@", imageFilesArray);
+        PFObject *tempObject = [imageFilesArray objectAtIndex:0];
+        NSString *FirstName = [tempObject objectForKey:@"FirstName"];
+        NSString *LastName =[tempObject objectForKey:@"LastName"];
+        NSString *Credential =[tempObject objectForKey:@"Credential"];
+        self.NameTitle.text = [NSString stringWithFormat:@"%@ %@ %@", FirstName, LastName, Credential];
+        self.Treats.text = [tempObject objectForKey:@"Treats"];
+        self.Specialties.text = [tempObject objectForKey:@"Specialties"];
+        self.Education.text = [tempObject objectForKey:@"Education"];
+        self.Fees.text = [tempObject objectForKey:@"Fees"];
+        
+        PFFile *imageFile = [tempObject objectForKey:@"imageFile"];
+        
+        [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if (!error) {
+                //NSLog(@"%@", data);
+                _backgroundImageView.image = [UIImage imageWithData:data];
+                
+            }
+            
+        }];
+        
+    }];
+}
 /*
 #pragma mark - Navigation
 

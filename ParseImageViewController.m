@@ -41,22 +41,35 @@
 - (void)queryParseMethod {
     PFQuery *query = [PFQuery queryWithClassName:@"doctorData"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-                 NSLog(@"%@", objects);
+                 //NSLog(@"%@", objects);
         if (!error) {
             imageFilesArray = [[NSArray alloc] initWithArray:objects];
+            //NSLog(@"%lu", (unsigned long)imageFilesArray.count);
         }
-    }];
-    PFObject *tempObject = [imageFilesArray objectAtIndex:1];
-    PFFile *imageFile = [tempObject objectForKey:@"imageFile"];
-    
-    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-        if (!error) {
-            NSLog(@"%@", data);
-            parseImage.image = [UIImage imageWithData:data];
+        //NSLog(@"%@", imageFilesArray);
+        PFObject *tempObject = [imageFilesArray objectAtIndex:0];
+        NSString *FirstName = [tempObject objectForKey:@"FirstName"];
+        NSString *LastName =[tempObject objectForKey:@"LastName"];
+        NSString *Credential =[tempObject objectForKey:@"Credential"];
+        self.NameTitle.text = [NSString stringWithFormat:@"%@ %@ %@", FirstName, LastName, Credential];
+        self.Treats.text = [tempObject objectForKey:@"Treats"];
+        self.Specialties.text = [tempObject objectForKey:@"Specialties"];
+        self.Education.text = [tempObject objectForKey:@"Education"];
+        self.Fees.text = [tempObject objectForKey:@"Fees"];
+
+        PFFile *imageFile = [tempObject objectForKey:@"imageFile"];
+        
+        [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if (!error) {
+                //NSLog(@"%@", data);
+                parseImage.image = [UIImage imageWithData:data];
+                
+            }
             
-        }
+        }];
         
     }];
+    
 
 /*    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
       NSLog(@"%@", object);

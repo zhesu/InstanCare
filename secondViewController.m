@@ -18,7 +18,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    //[self performSelector:@selector(queryParseMethod)];
+    PFQuery *query = [PFQuery queryWithClassName:@"doctorData"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        NSLog(@"%@", objects);
+        if (!error) {
+            imageFilesArray = [[NSArray alloc] initWithArray:objects];
+            NSLog(@"%lu", (unsigned long)imageFilesArray.count);
+        }
+        //NSLog(@"%@", imageFilesArray);
+        PFObject *tempObject = [imageFilesArray objectAtIndex:0];
+        PFFile *imageFile = [tempObject objectForKey:@"imageFile"];
+        PFObject *tempObject2 = [imageFilesArray objectAtIndex:0];
+        PFFile *imageFile2 = [tempObject2 objectForKey:@"imageFile"];
+        //_pageImages = @[imageFile, imageFile2];
+  }];
 	// Create the data model
     _pageTitles = @[@"Over 200 Tips and Tricks", @"Discover Hidden Features", @"Bookmark Favorite Tip", @"Free Regular Update"];
     _pageImages = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png"];
@@ -46,6 +60,34 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+/*
+- (void)queryParseMethod {
+    PFQuery *query = [PFQuery queryWithClassName:@"doctorData"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+    NSLog(@"%@", objects);
+        if (!error) {
+            imageFilesArray = [[NSArray alloc] initWithArray:objects];
+            NSLog(@"%lu", (unsigned long)imageFilesArray.count);
+        }
+        //NSLog(@"%@", imageFilesArray);
+      //  PFObject *tempObject = [imageFilesArray objectAtIndex:0];
+       // PFFile *imageFile = [tempObject objectForKey:@"imageFile"];
+       // PFObject *tempObject2 = [imageFilesArray objectAtIndex:0];
+        //PFFile *imageFile2 = [tempObject2 objectForKey:@"imageFile"];
+       // _pageImages = @[imageFile, imageFile2];
+        
+        [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if (!error) {
+                //NSLog(@"%@", data);
+                parseImage.image = [UIImage imageWithData:data];
+                
+            }
+            
+        }]; */
+        
+//    }];
+    
+//}
 
 /*- (IBAction)startWalkthrough:(id)sender {
  //   PageContentViewController *startingViewController = [self viewControllerAtIndex:0];
