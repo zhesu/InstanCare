@@ -41,10 +41,26 @@
 - (void)queryParseMethod {
     PFQuery *query = [PFQuery queryWithClassName:@"doctorData"];
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-        
-        NSLog(@"Retrieved data");
-        
+      NSLog(@"%@", object);
+       // NSLog(@"Retrieved data");
+
+        NSString *FirstName = [object objectForKey:@"FirstName"];
+        NSString *LastName =[object objectForKey:@"LastName"];
+        NSString *Credential =[object objectForKey:@"Credential"];
+        self.NameTitle.text = [NSString stringWithFormat:@"%@ %@ %@", FirstName, LastName, Credential];
+        self.Treats.text = [object objectForKey:@"Treats"];
+        self.Specialties.text = [object objectForKey:@"Specialties"];
+        self.Education.text = [object objectForKey:@"Education"];
+        self.Fees.text = [object objectForKey:@"Fees"];
         if (!error) {
+      /*      PFFile *fullName = [object objectForKey:@"FirstName"];// @"LastName"];
+            [fullName getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                if (!error) {
+        self.Name.text = [NSString stringWithFormat:@"%@", fullName];
+                  //  parseImage.text = [UIImage imageWithData:data];
+                }
+            }];*/
+        
             PFFile *imageFile = [object objectForKey:@"imageFile"];
 //            [parseImage setImage:file];
             [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
@@ -53,6 +69,7 @@
                 }
             }];
         }
+     
     //[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
     //[query getObjectInBackgroundWithId:@"objectid"
                                 // block:^(PFObject *objects, NSError *error) {

@@ -14,4 +14,11 @@
 }
 
 @property (weak, nonatomic) IBOutlet UIImageView *parseImage;
+@property (weak, nonatomic) IBOutlet UILabel *Treats;
+//@property (weak, nonatomic) IBOutlet UILabel *Specialties;
+@property (weak, nonatomic) IBOutlet UILabel *Specialties;
+@property (weak, nonatomic) IBOutlet UILabel *NameTitle;
+
+@property (weak, nonatomic) IBOutlet UILabel *Education;
+@property (weak, nonatomic) IBOutlet UILabel *Fees;
 @end
