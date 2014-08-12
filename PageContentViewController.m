@@ -24,7 +24,10 @@
 
     // Do any additional setup after loading the view.
     self.backgroundImageView.image = [UIImage imageNamed:self.imageFile];
+    
+    //self.backgroundImageView.image = [UIImage imageWithData:self.imageFile];
     self.titleLabel.text = self.titleText;
+    self.Fees.text = self.Price;
 }
 
 - (IBAction)showPopUp:(id)sender {
@@ -56,7 +59,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+/*
 - (void)queryParseMethod {
     PFQuery *query = [PFQuery queryWithClassName:@"doctorData"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -88,7 +91,7 @@
         }];
         
     }];
-}
+}*/
 /*
 #pragma mark - Navigation
 

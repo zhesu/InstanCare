@@ -29,5 +29,5 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *Education;
 @property (weak, nonatomic) IBOutlet UILabel *Fees;
-
+@property NSString *Price;
 @end

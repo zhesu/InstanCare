@@ -32,7 +32,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="8mJ-td-YAJ" kind="push" id="2OO-g7-Jyn"/>
+                                    <segue destination="8mJ-td-YAJ" kind="push" identifier="NewViewController" id="2OO-g7-Jyn"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iCare" translatesAutoresizingMaskIntoConstraints="NO" id="7TX-6m-OQy">
