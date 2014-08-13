@@ -13,7 +13,4 @@
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 //@interface ViewController : UIViewController <CoreLocationControllerDelegate>
-@property (strong, nonatomic) NSArray *imageFilesArray;
-@property (strong, nonatomic) NSMutableArray *imageArray;
-@property (strong, nonatomic) NSMutableArray *payFees;
 @end

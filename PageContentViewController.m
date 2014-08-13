@@ -23,11 +23,25 @@
    // [self setRoundedBorder:5 borderWidth:1 color:[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] forButton:showPopupBtn];
 
     // Do any additional setup after loading the view.
+
     self.backgroundImageView.image = [UIImage imageNamed:self.imageFile];
-    
+    //self.backgroundImageView.image = [UIImage imageWithData:_imageData];
     //self.backgroundImageView.image = [UIImage imageWithData:self.imageFile];
     self.titleLabel.text = self.titleText;
-    self.Fees.text = self.Price;
+    self.Treats.text = self.tempTreats;
+    self.Specialties.text = self.tempSpecialties;
+    self.NameTitle.text = [NSString stringWithFormat:@"%@ %@ %@", _tempFirstName, _tempLastName, _tempCredential];
+    self.Education.text = self.tempEducation;
+    self.Fees.text = self.tempFees;
+    [_imageFile2 getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            //NSLog(@"%@", data);
+            _backgroundImageView.image = [UIImage imageWithData:data];
+            
+        }
+        
+    }];
+
 }
 
 - (IBAction)showPopUp:(id)sender {

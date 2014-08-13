@@ -58,8 +58,10 @@
         self.Fees.text = [tempObject objectForKey:@"Fees"];
 
         PFFile *imageFile = [tempObject objectForKey:@"imageFile"];
-        
+        //NSLog(@"%@", imageFile);
         [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            //NSLog(@"%@", data);
+            _imageData = data;
             if (!error) {
                 //NSLog(@"%@", data);
                 parseImage.image = [UIImage imageWithData:data];
@@ -69,7 +71,7 @@
         }];
         
     }];
-    
+     NSLog(@"%@", _imageData);
 
 /*    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
       NSLog(@"%@", object);

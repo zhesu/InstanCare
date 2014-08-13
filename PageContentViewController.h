@@ -21,6 +21,8 @@
 @property NSUInteger pageIndex;
 @property NSString *titleText;
 @property NSString *imageFile;
+@property PFFile *imageFile2;
+@property NSData *imageData;
 @property (weak, nonatomic) IBOutlet UIButton *showPopupBtn;
 @property (strong, nonatomic) PopUpViewController *popViewController;
 @property (weak, nonatomic) IBOutlet UILabel *Treats;
@@ -29,5 +31,12 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *Education;
 @property (weak, nonatomic) IBOutlet UILabel *Fees;
-@property NSString *Price;
+@property NSString *tempFirstName;
+@property NSString *tempLastName;
+@property NSString *tempCredential;
+@property NSString *tempTreats;
+@property NSString *tempSpecialties;
+@property NSString *tempNameTitle;
+@property NSString *tempEducation;
+@property NSString *tempFees;
 @end
