@@ -29,6 +29,7 @@
 @property (strong, nonatomic) NSArray *pageEducation;
 @property (strong, nonatomic) NSArray *pageFees;
 @property (strong, nonatomic) PFFile *pageImage2;
+@property (strong, nonatomic) PFFile *pageImage1;
 //@property NSString *pageFees;
 @property (strong, nonatomic) NSMutableArray *imageArray;
 @end

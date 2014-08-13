@@ -24,7 +24,7 @@
 
     // Do any additional setup after loading the view.
 
-    self.backgroundImageView.image = [UIImage imageNamed:self.imageFile];
+    //self.backgroundImageView.image = [UIImage imageNamed:self.imageFile];
     //self.backgroundImageView.image = [UIImage imageWithData:_imageData];
     //self.backgroundImageView.image = [UIImage imageWithData:self.imageFile];
     self.titleLabel.text = self.titleText;

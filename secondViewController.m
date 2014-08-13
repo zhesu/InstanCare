@@ -103,7 +103,8 @@
         _pageNameTitle = @[NameTitle1, NameTitle2];
         _pageEducation = @[Education1, Education2];
         _pageFees = @[Fees1, Fees2];
-        _pageImage2 = image1;//@[image1, image2];
+        _pageImage1 = image1;
+        _pageImage2 = image2;//@[image1, image2];
         _pageTitles = @[@"Over 200 Tips and Tricks", @"Discover Hidden Features", @"Bookmark Favorite Tip", @"Free Regular Update"];
         _pageImages = @[@"page1.png", @"page2.png"];//, @"page3.png", @"page4.png"];
         // Create page view controller
@@ -187,7 +188,13 @@
 
     // Create a new view controller and pass suitable data.
     PageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
-    pageContentViewController.imageFile2 = self.pageImage2;
+    if (index == 0) {
+        NSLog(@"%lu", (unsigned long) index);
+        pageContentViewController.imageFile2 = self.pageImage1;
+    } else {
+        NSLog(@"%lu", (unsigned long) index);
+        pageContentViewController.imageFile2 = self.pageImage2;
+    }
     //pageContentViewController.imageFile = self.pageImages[index];
     //pageContentViewController.imageFile2 = self.pageImages[index];
     pageContentViewController.titleText = self.pageTitles[index];
