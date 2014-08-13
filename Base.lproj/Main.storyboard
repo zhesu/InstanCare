@@ -4,6 +4,25 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="msf-t7-i4R">
+            <objects>
+                <viewController id="4me-kB-UAK" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eSM-0w-Yvw"/>
+                        <viewControllerLayoutGuide type="bottom" id="C91-IH-Dxd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fOh-6a-Op9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KFv-jh-fL6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EAg-Hc-HYt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1410" y="-521"/>
+        </scene>
         <!--View Controller - Home-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -85,7 +104,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ON-8v-qNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1847" y="841"/>
+            <point key="canvasLocation" x="2643" y="149"/>
         </scene>
         <!--Page Content View Controller-->
         <scene sceneID="KbG-S2-4zZ">
@@ -194,7 +213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YZ0-Gq-fxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2268" y="149"/>
+            <point key="canvasLocation" x="2252" y="149"/>
         </scene>
         <!--Signup View Controller - Authorization-->
         <scene sceneID="6P4-VZ-XLQ">
