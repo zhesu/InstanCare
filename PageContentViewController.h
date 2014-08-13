@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PopUpViewController.h"
 #import <QuartzCore/QuartzCore.h>
-//#import <Parse/Parse.h>
+#import <Parse/Parse.h>
 
 @interface PageContentViewController : UIViewController {
     NSArray *imageFilesArray;

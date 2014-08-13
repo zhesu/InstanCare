@@ -33,9 +33,11 @@
     self.NameTitle.text = [NSString stringWithFormat:@"%@ %@ %@", _tempFirstName, _tempLastName, _tempCredential];
     self.Education.text = self.tempEducation;
     self.Fees.text = self.tempFees;
+    //NSLog(@"%@", _imageFile2);
     [_imageFile2 getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
-            //NSLog(@"%@", data);
+      //      NSLog(@"%@", error);
+      //      NSLog(@"%@", data);
             _backgroundImageView.image = [UIImage imageWithData:data];
             
         }
@@ -46,15 +48,19 @@
 
 - (IBAction)showPopUp:(id)sender {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad){
-        self.popViewController = [[PopUpViewController alloc] initWithNibName:@"PopUpViewController_iPad" bundle:nil];
-        [self.popViewController setTitle:@"This is a popup view"];
+       // self.popViewController = [[PopUpViewController alloc] initWithNibName:@"PopUpViewController_iPad" bundle:nil];
+       // [self.popViewController setTitle:@"This is a popup view"];
         
-        [self.popViewController showInView:self.view withImage:[UIImage imageNamed:@"typpzdemo"] withMessage:@"You just triggered a great popup window" animated:YES];
+       // [self.popViewController showInView:self.view withImage:[UIImage imageNamed:@"typpzdemo"] withMessage:@"You just triggered a great popup window" animated:YES];
     } else {
         self.popViewController = [[PopUpViewController alloc] initWithNibName:@"PopUpViewController" bundle:nil];
         [self.popViewController setTitle:@"This is a popup view"];
-        
-        [self.popViewController showInView:self.view withImage:[UIImage imageNamed:@"typpzdemo"] withMessage:@"You just triggered a great popup window" animated:YES];
+        //(void)showInView:(UIView *)aView withImage:(UIImage *)image withMessage:(NSString *)nameTitle withMessage:(NSString *)address withMessage: (NSString *)fees animated:(BOOL)animated
+        [self.popViewController showInView:self.view withImageFile:_imageFile2  withMessage:self.NameTitle.text withMessage:self.Treats.text withMessage:self.Fees.text animated:YES];
+        //[self.popViewController showInView:self.view withImage:[UIImage imageNamed:@"typpzdemo"] withMessage:self.NameTitle.text withMessage:self.Treats.text withMessage:self.Fees.text animated:YES];
+       // [self.popViewController showInView:self.view withImage:[UIImage imageNamed:@"typpzdemo"] withMessage:@"You just triggered a great popup window" animated:YES];
+        //[self.popViewController showInView:self.view withImage:[UIImage imageNamed:@"typpzdemo"] withMessage:self.Treats.text animated:YES];
+        //withMessage:<#(NSString *)#> withMessage:<#(NSString *)#> withMessage:<#(NSString *)#> animated:<#(BOOL)#>: [PFFile fileWithName:_imageFile2]
     }
 }
 

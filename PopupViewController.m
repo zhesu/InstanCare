@@ -49,6 +49,17 @@
     [self removeAnimate];
 }
 
+- (IBAction)confirmBtn:(id)sender {
+    // Create our Installation query
+    PFQuery *pushQuery = [PFInstallation query];
+    [pushQuery whereKey:@"deviceType" equalTo:@"ios"];
+    
+    // Send push notification to query
+    [PFPush sendPushMessageToQueryInBackground:pushQuery
+                                   withMessage:@"Your doctor will call you to confirm in a minute."];
+
+}
+
 - (void)removeAnimate
 {
     [UIView animateWithDuration:.25 animations:^{
@@ -63,12 +74,25 @@
 
 
 
-- (void)showInView:(UIView *)aView withImage:(UIImage *)image withMessage:(NSString *)message animated:(BOOL)animated
+- (void)showInView:(UIView *)aView withImageFile:(PFFile *)image withMessage:(NSString *)nameTitle withMessage:(NSString *)address withMessage: (NSString *)fees animated:(BOOL)animated
 {
+
     dispatch_async(dispatch_get_main_queue(), ^{
         [aView addSubview:self.view];
-        self.logoImg.image = image;
-        self.messageLabel.text = message;
+        //NSLog(@"%@", image);
+ //       self.popupImg.image = image;
+        [image getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            if (!error) {
+                //NSLog(@"%@", error);
+                //NSLog(@"%@", data);
+                _popupImg.image = [UIImage imageWithData:data];
+                
+            }
+            
+        }];
+        self.address.text = address;
+        self.Fees.text = fees;
+        self.nameTitle.text = nameTitle;
         if (animated) {
             [self showAnimate];
         }
