@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MapViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIView *plainMap;
+@property (weak, nonatomic) IBOutlet UIView *subViewMap;
 
 @end
