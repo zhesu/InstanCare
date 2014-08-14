@@ -86,7 +86,7 @@
                     <navigationItem key="navigationItem" title="Locations" id="hAK-UP-8Wk">
                         <barButtonItem key="leftBarButtonItem" title="Close" id="60Y-d1-aAb">
                             <connections>
-                                <segue destination="YNo-I9-G1t" kind="modal" modalTransitionStyle="coverVertical" id="GWV-at-fyE"/>
+                                <segue destination="YNo-I9-G1t" kind="modal" modalTransitionStyle="coverVertical" id="ZTw-Fj-m6e"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add" id="EKk-K0-uFD">
@@ -208,7 +208,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ON-8v-qNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3807" y="149"/>
+            <point key="canvasLocation" x="2420" y="137"/>
         </scene>
         <!--Page Content View Controller-->
         <scene sceneID="KbG-S2-4zZ">
@@ -318,7 +318,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YZ0-Gq-fxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3416" y="149"/>
+            <point key="canvasLocation" x="1957" y="137"/>
         </scene>
         <!--Signup View Controller - Authorization-->
         <scene sceneID="6P4-VZ-XLQ">
@@ -801,6 +801,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="GWV-at-fyE"/>
+        <segue reference="ZTw-Fj-m6e"/>
     </inferredMetricsTieBreakers>
 </document>

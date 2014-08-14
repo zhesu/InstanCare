@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface MapViewController : UIViewController
+#import <GoogleMaps/GoogleMaps.h>
+@interface MapViewController : UIViewController<GMSMapViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *subViewMap;
+//@property (weak, nonatomic) IBOutlet UIImageView *mapPin;
 
 @end
