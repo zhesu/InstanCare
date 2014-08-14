@@ -31,6 +31,9 @@
                                     <color key="titleColor" red="0.98431378602981567" green="0.99215692281723022" blue="0.98823535442352295" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="8mJ-td-YAJ" kind="push" id="8qh-2d-SfF"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Available in Los Angeles              From 8am to 10pm" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="gsO-bI-Fto">
                                 <rect key="frame" x="20" y="127" width="280" height="66"/>
@@ -46,13 +49,12 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mOk-1T-Z0U" kind="modal" modalTransitionStyle="coverVertical" id="nmq-8T-ACa"/>
+                                    <segue destination="mOk-1T-Z0U" kind="modal" modalTransitionStyle="coverVertical" id="4dO-jS-sJR"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Request" id="F0f-FJ-RBv"/>
                     <navigationItem key="navigationItem" title="Home" id="qed-BZ-RsP"/>
                     <connections>
                         <outlet property="mapView" destination="N6j-TD-gRv" id="TRh-BK-5cc"/>
@@ -60,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="973" y="149"/>
+            <point key="canvasLocation" x="983" y="137"/>
         </scene>
         <!--Table View Controller - Locations-->
         <scene sceneID="4qN-tW-vCi">
@@ -84,7 +86,7 @@
                     <navigationItem key="navigationItem" title="Locations" id="hAK-UP-8Wk">
                         <barButtonItem key="leftBarButtonItem" title="Close" id="60Y-d1-aAb">
                             <connections>
-                                <segue destination="vXZ-lx-hvc" kind="modal" modalTransitionStyle="coverVertical" animates="NO" id="9UO-FJ-8os"/>
+                                <segue destination="YNo-I9-G1t" kind="modal" modalTransitionStyle="coverVertical" id="GWV-at-fyE"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add" id="EKk-K0-uFD">
@@ -181,20 +183,22 @@
         <scene sceneID="YfV-vj-mgL">
             <objects>
                 <viewController storyboardIdentifier="RootViewController" modalTransitionStyle="flipHorizontal" id="8mJ-td-YAJ" customClass="secondViewController" sceneMemberID="viewController">
-                    <navigationBar key="view" contentMode="scaleToFill" id="rQx-Nl-Ahs">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F9K-0V-yzm"/>
+                        <viewControllerLayoutGuide type="bottom" id="vgO-9J-tlY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ims-bL-2F7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                        <items>
-                            <navigationItem title="Title" id="czg-6H-1C0"/>
-                        </items>
-                    </navigationBar>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
                     <navigationItem key="navigationItem" title="Doctors" id="FY6-zx-6bI" customClass="UI">
                         <barButtonItem key="backBarButtonItem" title="Home" id="CsL-5O-TB7"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6i-1h-CKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1963" y="149"/>
+            <point key="canvasLocation" x="1513" y="137"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="6c2-Ai-0EY">
@@ -204,7 +208,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ON-8v-qNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3281" y="149"/>
+            <point key="canvasLocation" x="3807" y="149"/>
         </scene>
         <!--Page Content View Controller-->
         <scene sceneID="KbG-S2-4zZ">
@@ -314,7 +318,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YZ0-Gq-fxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2890" y="149"/>
+            <point key="canvasLocation" x="3416" y="149"/>
         </scene>
         <!--Signup View Controller - Authorization-->
         <scene sceneID="6P4-VZ-XLQ">
@@ -742,9 +746,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="3Em-S4-o5D"/>
-                        <segue destination="W59-5s-FIj" kind="relationship" relationship="viewControllers" id="bGp-m7-P77"/>
-                        <segue destination="dt6-bN-oWg" kind="relationship" relationship="viewControllers" id="fig-qA-erP"/>
+                        <segue destination="iW7-Pl-Tbf" kind="relationship" relationship="viewControllers" id="UtX-Ia-qry"/>
+                        <segue destination="W59-5s-FIj" kind="relationship" relationship="viewControllers" id="LKU-aX-ABn"/>
+                        <segue destination="dt6-bN-oWg" kind="relationship" relationship="viewControllers" id="RtO-GE-1On"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ds4-es-y1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -769,29 +773,25 @@
             </objects>
             <point key="canvasLocation" x="-1572" y="841"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Bu8-m4-90k">
+        <!--Navigation Controller - Request-->
+        <scene sceneID="jHa-Ci-3y9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wAK-Rx-vfd" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iW7-Pl-Tbf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Request" id="F0f-FJ-RBv"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Ooh-C3-EWU"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ttH-3b-vLQ">
+                    <navigationItem key="navigationItem" id="37W-dP-A4y"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yn2-1v-UR3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="hVY-pg-1Am">
-                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </toolbar>
                     <connections>
-                        <segue destination="8mJ-td-YAJ" kind="relationship" relationship="rootViewController" id="snz-w4-pax"/>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="gSn-wx-HB3"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Iqo-f3-U56" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1oM-Ns-Per" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1513" y="155"/>
+            <point key="canvasLocation" x="485" y="-483"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -801,7 +801,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="9UO-FJ-8os"/>
-        <segue reference="K8W-Pq-xan"/>
+        <segue reference="GWV-at-fyE"/>
     </inferredMetricsTieBreakers>
 </document>
