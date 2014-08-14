@@ -161,12 +161,20 @@
                                     <action selector="showPopUp:" destination="1o3-v7-t0t" eventType="touchUpInside" id="XMO-ns-iRy"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ArU-fH-P6e">
+                                <rect key="frame" x="0.0" y="65" width="320" height="310"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Address" id="lWY-vr-d6y">
                         <barButtonItem key="backBarButtonItem" title="Locations" id="UVp-De-AaC"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="plainMap" destination="ArU-fH-P6e" id="wYB-3e-oQ0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ule-AR-gDj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
