@@ -4,25 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="msf-t7-i4R">
-            <objects>
-                <viewController id="4me-kB-UAK" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="eSM-0w-Yvw"/>
-                        <viewControllerLayoutGuide type="bottom" id="C91-IH-Dxd"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="fOh-6a-Op9">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="KFv-jh-fL6"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EAg-Hc-HYt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1410" y="-521"/>
-        </scene>
         <!--View Controller - Home-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
