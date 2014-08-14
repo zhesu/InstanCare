@@ -5,16 +5,30 @@
 //  Created by Zhe Su on 7/29/14.
 //  Copyright (c) 2014 Zhe Su. All rights reserved.
 //
-
+#import "APIKey.h"
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import <GoogleMaps/GoogleMaps.h>
-@implementation AppDelegate
+@implementation AppDelegate {
+      id services_;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-  //  [GMSServices provideAPIKey:@"API_KEY"];
+    //[GMSServices provideAPIKey:@"API_kKEY"];
+    if ([kAPIKey length] == 0) {
+        // Blow up if APIKey has not yet been set.
+        NSString *bundleId = [[NSBundle mainBundle] bundleIdentifier];
+        NSString *format = @"Configure APIKey inside SDKDemoAPIKey.h for your "
+        @"bundle `%@`, see README.GoogleMapsSDKDemos for more information";
+        @throw [NSException exceptionWithName:@"SDKDemoAppDelegate"
+                                       reason:[NSString stringWithFormat:format, bundleId]
+                                     userInfo:nil];
+    }
+    [GMSServices provideAPIKey:kAPIKey];
+    services_ = [GMSServices sharedServices];
+
     [Parse setApplicationId:@"nApAsA33UhTBwI0mWotrIS4d2fO3C2mIDtj2Vto6"
                   clientKey:@"eNMWXtuS2sjI638nG8NKcMLco3aLuqoaLoBQuYUm"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];

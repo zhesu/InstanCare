@@ -49,12 +49,13 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Y6k-US-fLE" kind="push" id="ih7-5H-kFk"/>
+                                    <segue destination="mOk-1T-Z0U" kind="modal" modalTransitionStyle="coverVertical" id="nmq-8T-ACa"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Request" id="F0f-FJ-RBv"/>
                     <navigationItem key="navigationItem" title="Home" id="qed-BZ-RsP"/>
                     <connections>
                         <outlet property="mapView" destination="N6j-TD-gRv" id="TRh-BK-5cc"/>
@@ -62,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1410" y="149"/>
+            <point key="canvasLocation" x="973" y="149"/>
         </scene>
         <!--Table View Controller - Locations-->
         <scene sceneID="4qN-tW-vCi">
@@ -82,15 +83,11 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Y6k-US-fLE" id="v7j-v0-gCR"/>
-                            <outlet property="delegate" destination="Y6k-US-fLE" id="G8o-gl-aIr"/>
-                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Locations" id="hAK-UP-8Wk">
                         <barButtonItem key="leftBarButtonItem" title="Close" id="60Y-d1-aAb">
                             <connections>
-                                <segue destination="vXZ-lx-hvc" kind="push" id="ZmQ-Q8-YsL"/>
+                                <segue destination="vXZ-lx-hvc" kind="modal" modalTransitionStyle="coverVertical" animates="NO" id="9UO-FJ-8os"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add" id="EKk-K0-uFD">
@@ -173,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ule-AR-gDj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2372" y="-520"/>
+            <point key="canvasLocation" x="2420" y="-522"/>
         </scene>
         <!--Second View Controller - Doctors-->
         <scene sceneID="YfV-vj-mgL">
@@ -567,8 +564,9 @@
         <scene sceneID="ThW-zQ-dwh">
             <objects>
                 <navigationController title="Request" automaticallyAdjustsScrollViewInsets="NO" id="mOk-1T-Z0U" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Request" id="lvK-Lb-p2n"/>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="Request" id="lvK-Lb-p2n"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="wdM-Wm-Xrn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tkw-MA-hbb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -580,12 +578,12 @@
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </toolbar>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="Ifr-h7-bdJ"/>
+                        <segue destination="Y6k-US-fLE" kind="relationship" relationship="rootViewController" id="YoM-N3-lqf"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VaP-dz-bUJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="973" y="149"/>
+            <point key="canvasLocation" x="1513" y="-522"/>
         </scene>
         <!--Logout View Controller - Logout-->
         <scene sceneID="rDh-YF-Hy4">
@@ -730,6 +728,7 @@
         <scene sceneID="zNN-ti-Ho3">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="YNo-I9-G1t" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Djl-r7-JXE"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="xOV-ri-rDO">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -737,9 +736,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="mOk-1T-Z0U" kind="relationship" relationship="viewControllers" id="9os-Tm-jWP"/>
-                        <segue destination="W59-5s-FIj" kind="relationship" relationship="viewControllers" id="R5l-vi-i8Z"/>
-                        <segue destination="dt6-bN-oWg" kind="relationship" relationship="viewControllers" id="c3J-5c-ARD"/>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="3Em-S4-o5D"/>
+                        <segue destination="W59-5s-FIj" kind="relationship" relationship="viewControllers" id="bGp-m7-P77"/>
+                        <segue destination="dt6-bN-oWg" kind="relationship" relationship="viewControllers" id="fig-qA-erP"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ds4-es-y1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -772,7 +771,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="ZmQ-Q8-YsL"/>
         <segue reference="K8W-Pq-xan"/>
+        <segue reference="9UO-FJ-8os"/>
     </inferredMetricsTieBreakers>
 </document>
