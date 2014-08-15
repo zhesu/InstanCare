@@ -11,9 +11,6 @@
 @interface MapViewController () {
     GMSMapView *mapView_;
     GMSGeocoder *geocoder;
-    //GMSAddress *result;
-    NSString *addressLine1;
-    NSString *addressLine2;
     BOOL firstLocationUpdate_;
 }
 
@@ -33,6 +30,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _mapPin.image = [UIImage imageNamed:@"mappin.png"];
+    [self.subViewMap bringSubviewToFront:self.mapPin];
+    //[self.subViewMap addSubview:mapView_];
+    //UIView *view=[[UIView alloc]init];
+    //[view setImage:[UIImage imageNamed:@"a.png"]];
+    //[_mapPin setImage:[UIImage imageNamed:@"mappin.png"];
+    //_mapPin2 = [UIImage imageNamed:@"mappin.png"];
+    //[self.mapPin bringSubviewToFront:_mapPin2];
     
     // Create a GMSCameraPosition that tells the map to display the
     // coordinate -33.86,151.20 at zoom level 6.
@@ -137,8 +142,8 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
             NSLog(@"country=%@", addressObj.country);
             NSLog(@"lines=%@", addressObj.lines);
         }
-        marker.title = response.firstResult.addressLine1;
-        marker.snippet = response.firstResult.addressLine2;
+        //marker.title = response.firstResult.addressLine1;
+        //marker.snippet = response.firstResult.addressLine2;
         marker.map = mapView_;
     }];
 
