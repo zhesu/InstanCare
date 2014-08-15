@@ -133,15 +133,26 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
         NSLog(@"reverse geocoding results:");
         for(GMSAddress* addressObj in [response results])
         {
-            NSLog(@"coordinate.latitude=%f", addressObj.coordinate.latitude);
-            NSLog(@"coordinate.longitude=%f", addressObj.coordinate.longitude);
-            NSLog(@"thoroughfare=%@", addressObj.thoroughfare);
-            NSLog(@"locality=%@", addressObj.locality);
-            NSLog(@"subLocality=%@", addressObj.subLocality);
-            NSLog(@"administrativeArea=%@", addressObj.administrativeArea);
-            NSLog(@"postalCode=%@", addressObj.postalCode);
-            NSLog(@"country=%@", addressObj.country);
-            NSLog(@"lines=%@", addressObj.lines);
+            //NSLog(@"coordinate.latitude=%f", addressObj.coordinate.latitude);
+            //NSLog(@"coordinate.longitude=%f", addressObj.coordinate.longitude);
+            //NSLog(@"thoroughfare=%@", addressObj.thoroughfare);
+            if (addressObj.thoroughfare!=NULL) {
+                self.street.text = addressObj.thoroughfare;
+            }
+            //NSLog(@"locality=%@", addressObj.locality);
+            //NSLog(@"subLocality=%@", addressObj.subLocality);
+            //NSLog(@"administrativeArea=%@", addressObj.administrativeArea);
+            if (addressObj.thoroughfare!=NULL) {
+                self.city.text = [NSString stringWithFormat:@"%@, %@", addressObj.locality, addressObj.administrativeArea];
+            }
+            
+            //NSLog(@"postalCode=%@", addressObj.postalCode);
+            if (addressObj.thoroughfare!=NULL) {
+            self.zipcode.text = addressObj.postalCode;
+            }
+
+            //NSLog(@"country=%@", addressObj.country);
+            //NSLog(@"lines=%@", addressObj.lines);
         }
         //marker.title = response.firstResult.addressLine1;
         //marker.snippet = response.firstResult.addressLine2;

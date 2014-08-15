@@ -12,4 +12,9 @@
 @property (weak, nonatomic) IBOutlet UIView *subViewMap;
 @property (weak, nonatomic) IBOutlet UIImageView *mapPin;
 
+@property (weak, nonatomic) IBOutlet UITextField *street;
+@property (weak, nonatomic) IBOutlet UITextField *aptNumber;
+@property (weak, nonatomic) IBOutlet UITextField *city;
+@property (weak, nonatomic) IBOutlet UITextField *zipcode;
+
 @end

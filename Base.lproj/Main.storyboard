@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="983" y="137"/>
         </scene>
-        <!--View Controller - Loctions-->
+        <!--Address View Controller - Loctions-->
         <scene sceneID="xfV-qV-wbr">
             <objects>
-                <viewController id="hki-4i-Fci" sceneMemberID="viewController">
+                <viewController id="hki-4i-Fci" customClass="addressViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="abv-lC-Py6"/>
                         <viewControllerLayoutGuide type="bottom" id="WMy-5H-jje"/>
@@ -80,6 +80,10 @@
                                 <rect key="frame" x="0.0" y="68" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="hki-4i-Fci" id="Rts-zU-BIR"/>
+                                    <outlet property="delegate" destination="hki-4i-Fci" id="yAc-c5-dT0"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -96,6 +100,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addressTable" destination="Hw1-Dn-FDe" id="GrF-QX-fSb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYe-2l-T8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -179,8 +186,12 @@
                         <barButtonItem key="backBarButtonItem" title="Locations" id="UVp-De-AaC"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="aptNumber" destination="WCY-NM-utb" id="xQB-f0-jem"/>
+                        <outlet property="city" destination="Zjd-hQ-mKn" id="JYe-En-Qt0"/>
                         <outlet property="mapPin" destination="fck-pZ-ds3" id="j3t-Nj-4LN"/>
+                        <outlet property="street" destination="3Y7-as-vVs" id="jlD-dz-y4f"/>
                         <outlet property="subViewMap" destination="ArU-fH-P6e" id="saz-Jr-cLy"/>
+                        <outlet property="zipcode" destination="POh-ij-Qml" id="lgP-5n-qfE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ule-AR-gDj" userLabel="First Responder" sceneMemberID="firstResponder"/>
