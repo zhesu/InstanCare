@@ -30,8 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _mapPin.image = [UIImage imageNamed:@"mappin.png"];
-    [self.subViewMap bringSubviewToFront:self.mapPin];
+
     //[self.subViewMap addSubview:mapView_];
     //UIView *view=[[UIView alloc]init];
     //[view setImage:[UIImage imageNamed:@"a.png"]];
@@ -56,6 +55,8 @@
                   context:NULL];
     
     [self.subViewMap addSubview:mapView_];
+    _mapPin.image = [UIImage imageNamed:@"mappin.png"];
+    [self.subViewMap bringSubviewToFront:self.mapPin];
     // Ask for My Location data after the map has already been added to the UI.
     dispatch_async(dispatch_get_main_queue(), ^{
         mapView_.myLocationEnabled = YES;
