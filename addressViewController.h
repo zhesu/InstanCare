@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 
 @interface addressViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    NSArray *addressArray;
+    NSMutableArray *addressArray;
 }
 @property (weak, nonatomic) IBOutlet UITableView *addressTable;
 

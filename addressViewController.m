@@ -29,7 +29,7 @@
     
     [retrieveColors findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            addressArray = [[NSArray alloc] initWithArray:objects];
+            addressArray = [[NSMutableArray alloc] initWithArray:objects];
         }
         NSLog(@"%@", addressArray);
         [addressTable reloadData];
@@ -81,7 +81,32 @@
     NSLog(@"cell tapped");
 }
 
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        PFObject *userData = [addressArray objectAtIndex:indexPath.row];
+        NSLog(@"delete row %@",userData);
+        [userData deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if(!error){
+                [addressArray removeObjectAtIndex:indexPath.row];
+                [tableView reloadData];
+            }
+            else
+            {
+                // check error
+            }
+        }]; 
+    }
+    
+}
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return YES;
+}
 
 /*
 #pragma mark - Navigation
