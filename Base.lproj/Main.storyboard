@@ -225,7 +225,7 @@
                                 <connections>
                                     <action selector="insertNewLocation:" destination="a0B-nj-Zdv" eventType="touchUpInside" id="eZh-ZV-qcu"/>
                                     <action selector="showPopUp:" destination="1o3-v7-t0t" eventType="touchUpInside" id="XMO-ns-iRy"/>
-                                    <segue destination="S4H-DA-GS5" kind="custom" customClass="MyPopSeque" id="oLR-f2-CJz"/>
+                                    <segue destination="S4H-DA-GS5" kind="custom" identifier="showDetailSegue" id="q0n-vh-kLN"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ArU-fH-P6e">
@@ -880,7 +880,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="TVt-m7-KbB"/>
-        <segue reference="oLR-f2-CJz"/>
+        <segue reference="q0n-vh-kLN"/>
         <segue reference="Dzm-iE-gI2"/>
     </inferredMetricsTieBreakers>
 </document>

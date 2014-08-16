@@ -18,7 +18,7 @@
 @end
 
 @implementation homeViewController
-
+//@synthesize isSomethingEnabled;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -31,10 +31,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSLog(@"isSomethingEnabled home");
+    _isSomethingEnabled = (BOOL *)NO;
+    NSLog(@"%s",_isSomethingEnabled);
     // Do any additional setup after loading the view.
     [self performSelector:@selector(queryParseMethod)];
-    //NSLog(@"flag");
-    //NSLog(@"%hhd",flag);
     manager = [[CLLocationManager alloc] init];
     geocoder = [[CLGeocoder alloc] init];
     manager.delegate = self;

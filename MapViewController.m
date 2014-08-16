@@ -31,8 +31,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"flag");
-    NSLog(@"%hhd",flag);
+   // NSLog(@"isSomethingEnabled home");
+   // NSLog(@"%s",isSomethingEnabled);
+    
     //[self.subViewMap addSubview:mapView_];
     //UIView *view=[[UIView alloc]init];
     //[view setImage:[UIImage imageNamed:@"a.png"]];
@@ -116,6 +117,18 @@
         marker.map = mapView_;
     }
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"showDetailSegue"])
+    {
+        homeViewController *controller = (homeViewController *)segue.destinationViewController;
+        controller.isSomethingEnabled = (BOOL *)YES;// this works fine
+        NSLog(@"isSomethingEnabled map");
+        //[self dismissViewControllerAnimated:YES completion:nil];
+
+    }
+}
+
 /*
 #pragma mark - GMSMapViewDelegate
 
@@ -180,7 +193,12 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
 
 }
 - (IBAction)insertNewLocation:(id)sender {
-    
+    //homeView = [[homeViewController alloc]initWithNibName:@"homeViewController" bundle:nil];
+    //[self.view addSubview:homeView.view];
+    //*_isSomethingEnabled2 = YES;
+    NSLog(@"%s", _isSomethingEnabled2);
+    homeView.isSomethingEnabled = _isSomethingEnabled2;
+
     // If it's not possible to get a location, then return.
 /*	CLLocation *location = self.locationManager.location;
 	if (!location) {
@@ -212,7 +230,7 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
     }
     NSLog(@"%@",preferredAddress);
     PFUser *user = [PFUser currentUser];
-    NSLog(@"%@",user);
+    //NSLog(@"%@",user);
     [user setObject:preferredAddress forKey:@"preferredAddress"];
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
     if (!error) {

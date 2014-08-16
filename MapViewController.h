@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <GoogleMaps/GoogleMaps.h>
 #import <Parse/Parse.h>
-
+#import "homeViewController.h"
 
 @interface MapViewController : UIViewController<GMSMapViewDelegate> {
+    homeViewController *homeView;
     CLLocationDegrees currentLatitude;
     CLLocationDegrees currentLongitude;
     NSString *currentAddress;
@@ -27,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *aptNumber;
 @property (weak, nonatomic) IBOutlet UITextField *city;
 @property (weak, nonatomic) IBOutlet UITextField *zipcode;
+@property(nonatomic) BOOL *isSomethingEnabled2;
 - (IBAction)insertNewLocation:(id)sender;
 
 
