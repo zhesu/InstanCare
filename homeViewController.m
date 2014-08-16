@@ -9,7 +9,10 @@
 #import "homeViewController.h"
 
 @interface homeViewController () {
-    GMSGeocoder *geocoder;
+    CLLocationManager *manager;
+    CLGeocoder *geocoder;
+    CLPlacemark *placemark;
+    NSString *preferredAddress;
 }
 
 @end
@@ -30,7 +33,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self performSelector:@selector(queryParseMethod)];
-    [_addressButton setTitle:@"addressButton" forState:UIControlStateNormal];
+    //NSLog(@"flag");
+    //NSLog(@"%hhd",flag);
+    manager = [[CLLocationManager alloc] init];
+    geocoder = [[CLGeocoder alloc] init];
+    manager.delegate = self;
+    manager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    [manager startUpdatingLocation];
+    
+    //[_addressButton setTitle:@"addressButton" forState:UIControlStateNormal];
+    
 
 }
 
@@ -46,7 +59,9 @@
     //NSLog(@"start query");
     //PFQuery *query = [PFQuery queryWithClassName:@"doctorData"];
     PFUser *user = [PFUser currentUser];
-    NSLog(@"%@", user);
+    PFObject *tempAddress = [user objectForKey:@"preferredAddress"];
+    [_addressButton setTitle:tempAddress forState:UIControlStateNormal];
+    //NSLog(@"%@", user);
     PFFile *imageFile = [user objectForKey:@"profilePicture"];
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         //NSLog(@"%@", data);
@@ -97,35 +112,90 @@
 
 }
 
-#pragma mark - GMSMapViewDelegate
+#pragma mark - CLLocationManagerDelegate Methods
 
-- (void)mapView:(GMSMapView *)mapView willMove:(BOOL)gesture {
-    [mapView clear];
-}
-
-- (void)mapView:(GMSMapView *)mapView idleAtCameraPosition:(GMSCameraPosition *)cameraPosition {
-    [[GMSGeocoder geocoder] reverseGeocodeCoordinate:cameraPosition.target completionHandler:^(GMSReverseGeocodeResponse* response, NSError* error) {
-        NSLog(@"reverse geocoding results:");
-        for(GMSAddress* addressObj in [response results])
-        {
-            currentLatitude = addressObj.coordinate.latitude;
-            currentLongitude = addressObj.coordinate.longitude;
-            if (addressObj.thoroughfare!=NULL) {
-                currentAddress = addressObj.thoroughfare;
-            }
-            if (addressObj.thoroughfare!=NULL) {
-                currentCity = [NSString stringWithFormat:@"%@, %@", addressObj.locality, addressObj.administrativeArea];
-            }
-            if (addressObj.thoroughfare!=NULL) {
-                currentZip = addressObj.postalCode;
-            }
-            
-        }
-        NSLog(@"%@", response.firstResult.addressLine1);
-        NSLog(@"%@", response.firstResult.addressLine2);
-
-    }];
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    
+    NSLog(@"Error: %@", error);
+    NSLog(@"Failed to get location! :(");
     
 }
 
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    
+    //NSLog(@"Location: %@", newLocation);
+    CLLocation *currentLocation = newLocation;
+ //   float lat = newLocation.coordinate.latitude;
+ //   float lng = newLocation.coordinate.longitude;
+ 
+    if (currentLocation != nil) {
+        
+      //  self.latitude.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
+      //  self.longitude.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
+        
+    }
+    PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLatitude:newLocation.coordinate.latitude longitude:newLocation.coordinate.longitude];
+    //NSLog(@"%@", geoPoint);
+/*    PFUser *user = [PFUser currentUser];
+    NSLog(@"%@", user);
+    NSLog(@"%@", preferredAddress);
+    [[PFUser currentUser] setObject:[user objectForKey:@"preferredAddress"] forKey:preferredAddress]; 
+ */
+    //PFFile *imageFile = [user objectForKey:@"profilePicture"];
+
+    /*PFObject *object = [PFObject objectWithClassName:@"tableView"];
+    if (currentCity == NULL || currentAddress == NULL || currentZip == NULL) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Oooopss!" message:@"You entered an invalid address" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    } else {
+        [object setObject:geoPoint forKey:@"location"];
+        [object setObject:currentCity forKey:@"city"];
+        [object setObject:currentAddress forKey:@"address"];
+        [object setObject:currentZip forKey:@"zipcode"];
+        
+        [object saveEventually:^(BOOL succeeded, NSError *error) {
+     
+        }];
+    }*/
+    
+    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        
+        if (error == nil && [placemarks count] > 0) {
+            
+            placemark = [placemarks lastObject];
+             NSString *tempaddress = [NSString stringWithFormat:@"%@ %@, %@ %@ %@",
+                                 placemark.subThoroughfare, placemark.thoroughfare, placemark.locality,
+                                 placemark.administrativeArea,                                 placemark.postalCode];
+            preferredAddress = tempaddress;
+
+            PFUser *user = [PFUser currentUser];
+            [user setObject:preferredAddress forKey:@"preferredAddress"];
+            [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (!error) {
+                    //NSLog(@"user address saved");
+                } else {
+                    // There was an error saving the currentUser.
+                }
+            }];
+
+        } else {
+            
+            NSLog(@"%@", error.debugDescription);
+            
+        }
+        
+    } ];
+    
+    
+}
+/*
+#pragma mark - addressViewControllerDelegate
+
+- (void)addressViewControllerDidCancel:(addressViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+*/
 @end

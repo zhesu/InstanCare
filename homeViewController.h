@@ -8,14 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
-#import <GoogleMaps/GoogleMaps.h>
+#import <CoreLocation/CoreLocation.h>
+#import "MapViewController.h"
+//#import "addressViewController.h"
+//@interface homeViewController : UIViewController <CLLocationManagerDelegate, addressViewControllerDelegate> {
+@interface homeViewController : UIViewController <CLLocationManagerDelegate> {
 
-@interface homeViewController : UIViewController {
     CLLocationDegrees currentLatitude;
     CLLocationDegrees currentLongitude;
     NSString *currentAddress;
     NSString *currentCity;
     NSString *currentZip;
+   // BOOL flag;
 }
 @property (weak, nonatomic) IBOutlet UIButton *addressButton;
 

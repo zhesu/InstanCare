@@ -81,6 +81,8 @@
 //user selects folder to add tag to
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"cell tapped");
+    PFObject *tempObject = [addressArray objectAtIndex:indexPath.row];
+    NSLog(@"%@", tempObject.objectId);
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -121,5 +123,10 @@
 }
 */
 
+/*
+- (IBAction)Close:(id)sender {
+    [self.delegate addressViewControllerDidCancel:self];
+}
+*/
 
 @end

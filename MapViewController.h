@@ -9,13 +9,16 @@
 #import <UIKit/UIKit.h>
 #import <GoogleMaps/GoogleMaps.h>
 #import <Parse/Parse.h>
+
+
 @interface MapViewController : UIViewController<GMSMapViewDelegate> {
     CLLocationDegrees currentLatitude;
     CLLocationDegrees currentLongitude;
     NSString *currentAddress;
     NSString *currentCity;
     NSString *currentZip;
-    
+    NSString *preferredAddress;
+    BOOL flag;
 }
 @property (weak, nonatomic) IBOutlet UIView *subViewMap;
 @property (weak, nonatomic) IBOutlet UIImageView *mapPin;

@@ -12,6 +12,7 @@
     GMSMapView *mapView_;
     GMSGeocoder *geocoder;
     BOOL firstLocationUpdate_;
+
 }
 
 @end
@@ -30,7 +31,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    NSLog(@"flag");
+    NSLog(@"%hhd",flag);
     //[self.subViewMap addSubview:mapView_];
     //UIView *view=[[UIView alloc]init];
     //[view setImage:[UIImage imageNamed:@"a.png"]];
@@ -129,10 +131,12 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
 
 - (void)mapView:(GMSMapView *)mapView idleAtCameraPosition:(GMSCameraPosition *)cameraPosition {
     [[GMSGeocoder geocoder] reverseGeocodeCoordinate:cameraPosition.target completionHandler:^(GMSReverseGeocodeResponse* response, NSError* error) {
+
         GMSMarker *marker = [GMSMarker markerWithPosition:cameraPosition.target];
         //NSLog(@"reverse geocoding results:");
         for(GMSAddress* addressObj in [response results])
         {
+
             //NSLog(@"coordinate.latitude=%f", addressObj.coordinate.latitude);
             //NSLog(@"coordinate.longitude=%f", addressObj.coordinate.longitude);
             //NSLog(@"thoroughfare=%@", addressObj.thoroughfare);
@@ -160,6 +164,14 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
             //NSLog(@"zipcode=%@", currentZip);
             //NSLog(@"country=%@", addressObj.country);
             //NSLog(@"lines=%@", addressObj.lines);
+            NSString *tempaddress = [NSString stringWithFormat:@"%@, %@ %@",
+                                     currentAddress,
+                                     currentCity,                                 currentZip];
+            if (tempaddress != NULL) {
+                preferredAddress = tempaddress;
+            }
+            
+            //NSLog(@"%@", preferredAddress);
         }
         //marker.title = response.firstResult.addressLine1;
         //marker.snippet = response.firstResult.addressLine2;
@@ -184,6 +196,7 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Oooopss!" message:@"You entered an invalid address" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
     } else {
+    
     [object setObject:geoPoint forKey:@"location"];
     [object setObject:currentCity forKey:@"city"];
     [object setObject:currentAddress forKey:@"address"];
@@ -195,7 +208,21 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
              [self loadObjects];
              }*/
         }];
+    
     }
+    NSLog(@"%@",preferredAddress);
+    PFUser *user = [PFUser currentUser];
+    NSLog(@"%@",user);
+    [user setObject:preferredAddress forKey:@"preferredAddress"];
+    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    if (!error) {
+     NSLog(@"user address saved");
+         NSLog(@"%@",preferredAddress);
+    } else {
+     // There was an error saving the currentUser.
+    }
+    }];
+    
 
 }
 @end

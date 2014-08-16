@@ -84,13 +84,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ymz-en-wMY">
-                                <rect key="frame" x="8" y="69" width="304" height="30"/>
+                                <rect key="frame" x="8" y="69" width="304" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPress:" destination="S4H-DA-GS5" eventType="touchUpInside" id="uE0-aY-ChR"/>
+                                    <segue destination="4Cd-Hb-htD" kind="modal" modalTransitionStyle="coverVertical" id="TVt-m7-KbB"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rpe-A8-roa">
@@ -132,7 +135,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Hw1-Dn-FDe">
-                                <rect key="frame" x="0.0" y="68" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -146,7 +149,7 @@
                     <navigationItem key="navigationItem" title="Loctions" id="tsm-JB-aU5">
                         <barButtonItem key="leftBarButtonItem" title="Close" id="oUV-MC-sfV">
                             <connections>
-                                <segue destination="k05-3r-MGT" kind="modal" modalTransitionStyle="coverVertical" id="8x2-3s-XhD"/>
+                                <segue destination="S4H-DA-GS5" kind="custom" customClass="MyPopSeque" id="cGc-yB-UJg"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add" id="gko-zm-WSc">
@@ -222,7 +225,7 @@
                                 <connections>
                                     <action selector="insertNewLocation:" destination="a0B-nj-Zdv" eventType="touchUpInside" id="eZh-ZV-qcu"/>
                                     <action selector="showPopUp:" destination="1o3-v7-t0t" eventType="touchUpInside" id="XMO-ns-iRy"/>
-                                    <segue destination="S4H-DA-GS5" kind="modal" id="lTt-J0-iDc"/>
+                                    <segue destination="S4H-DA-GS5" kind="custom" customClass="MyPopSeque" id="oLR-f2-CJz"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ArU-fH-P6e">
@@ -876,8 +879,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="TVt-m7-KbB"/>
+        <segue reference="oLR-f2-CJz"/>
         <segue reference="Dzm-iE-gI2"/>
-        <segue reference="8x2-3s-XhD"/>
-        <segue reference="lTt-J0-iDc"/>
     </inferredMetricsTieBreakers>
 </document>
