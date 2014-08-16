@@ -117,7 +117,7 @@
         marker.map = mapView_;
     }
 }
-
+/*
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"showDetailSegue"])
     {
@@ -128,7 +128,7 @@
 
     }
 }
-
+*/
 /*
 #pragma mark - GMSMapViewDelegate
 
@@ -196,8 +196,8 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
     //homeView = [[homeViewController alloc]initWithNibName:@"homeViewController" bundle:nil];
     //[self.view addSubview:homeView.view];
     //*_isSomethingEnabled2 = YES;
-    NSLog(@"%s", _isSomethingEnabled2);
-    homeView.isSomethingEnabled = _isSomethingEnabled2;
+    //NSLog(@"%s", _isSomethingEnabled2);
+    //homeView.isSomethingEnabled = _isSomethingEnabled2;
 
     // If it's not possible to get a location, then return.
 /*	CLLocation *location = self.locationManager.location;
@@ -230,7 +230,9 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
     }
     NSLog(@"%@",preferredAddress);
     PFUser *user = [PFUser currentUser];
-    //NSLog(@"%@",user);
+    NSString *userID = user.objectId;
+    NSLog(@"Parse User ObjectID: %@",userID);
+    NSLog(@"%@",user);
     [user setObject:preferredAddress forKey:@"preferredAddress"];
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
     if (!error) {
@@ -239,8 +241,10 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
     } else {
      // There was an error saving the currentUser.
     }
+        NSLog(@"%@",user);
+
     }];
-    
+     NSLog(@"%@",user);
 
 }
 @end
