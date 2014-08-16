@@ -8,9 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
-@interface homeViewController : UIViewController
+#import <GoogleMaps/GoogleMaps.h>
+
+@interface homeViewController : UIViewController {
+    CLLocationDegrees currentLatitude;
+    CLLocationDegrees currentLongitude;
+    NSString *currentAddress;
+    NSString *currentCity;
+    NSString *currentZip;
+}
+@property (weak, nonatomic) IBOutlet UIButton *addressButton;
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @property (strong, nonatomic) NSArray *imageFilesArray;
 @property (strong, nonatomic) NSMutableArray *imageArray;
+
+- (IBAction)buttonPress:(id)sender;
+
 @end

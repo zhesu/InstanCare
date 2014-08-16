@@ -8,7 +8,9 @@
 
 #import "homeViewController.h"
 
-@interface homeViewController ()
+@interface homeViewController () {
+    GMSGeocoder *geocoder;
+}
 
 @end
 
@@ -28,6 +30,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self performSelector:@selector(queryParseMethod)];
+    [_addressButton setTitle:@"addressButton" forState:UIControlStateNormal];
 
 }
 
@@ -88,5 +91,41 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)buttonPress:(id)sender {
+   // [_addressButton setTitle:@"addressButton" forState:UIControlStateNormal];
+
+}
+
+#pragma mark - GMSMapViewDelegate
+
+- (void)mapView:(GMSMapView *)mapView willMove:(BOOL)gesture {
+    [mapView clear];
+}
+
+- (void)mapView:(GMSMapView *)mapView idleAtCameraPosition:(GMSCameraPosition *)cameraPosition {
+    [[GMSGeocoder geocoder] reverseGeocodeCoordinate:cameraPosition.target completionHandler:^(GMSReverseGeocodeResponse* response, NSError* error) {
+        NSLog(@"reverse geocoding results:");
+        for(GMSAddress* addressObj in [response results])
+        {
+            currentLatitude = addressObj.coordinate.latitude;
+            currentLongitude = addressObj.coordinate.longitude;
+            if (addressObj.thoroughfare!=NULL) {
+                currentAddress = addressObj.thoroughfare;
+            }
+            if (addressObj.thoroughfare!=NULL) {
+                currentCity = [NSString stringWithFormat:@"%@, %@", addressObj.locality, addressObj.administrativeArea];
+            }
+            if (addressObj.thoroughfare!=NULL) {
+                currentZip = addressObj.postalCode;
+            }
+            
+        }
+        NSLog(@"%@", response.firstResult.addressLine1);
+        NSLog(@"%@", response.firstResult.addressLine2);
+
+    }];
+    
+}
 
 @end

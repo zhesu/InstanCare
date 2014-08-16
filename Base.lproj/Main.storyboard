@@ -84,11 +84,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ymz-en-wMY">
-                                <rect key="frame" x="137" y="69" width="46" height="30"/>
+                                <rect key="frame" x="8" y="69" width="304" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonPress:" destination="S4H-DA-GS5" eventType="touchUpInside" id="uE0-aY-ChR"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rpe-A8-roa">
                                 <rect key="frame" x="85" y="243" width="150" height="150"/>
@@ -108,6 +111,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="J7s-Dm-RSR"/>
                     <connections>
+                        <outlet property="addressButton" destination="Ymz-en-wMY" id="o36-l4-ST8"/>
                         <outlet property="profileImage" destination="rpe-A8-roa" id="khH-rX-brK"/>
                     </connections>
                 </viewController>
@@ -218,6 +222,7 @@
                                 <connections>
                                     <action selector="insertNewLocation:" destination="a0B-nj-Zdv" eventType="touchUpInside" id="eZh-ZV-qcu"/>
                                     <action selector="showPopUp:" destination="1o3-v7-t0t" eventType="touchUpInside" id="XMO-ns-iRy"/>
+                                    <segue destination="S4H-DA-GS5" kind="modal" id="lTt-J0-iDc"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ArU-fH-P6e">
@@ -873,5 +878,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="Dzm-iE-gI2"/>
         <segue reference="8x2-3s-XhD"/>
+        <segue reference="lTt-J0-iDc"/>
     </inferredMetricsTieBreakers>
 </document>
