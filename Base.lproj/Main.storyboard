@@ -149,10 +149,10 @@
                     <navigationItem key="navigationItem" title="Loctions" id="tsm-JB-aU5">
                         <barButtonItem key="leftBarButtonItem" title="Close" id="oUV-MC-sfV">
                             <connections>
-                                <segue destination="S4H-DA-GS5" kind="custom" customClass="MyPopSeque" id="cGc-yB-UJg"/>
+                                <segue destination="S4H-DA-GS5" kind="custom" identifier="" customClass="MyPopSeque" id="cGc-yB-UJg"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="gko-zm-WSc">
+                        <barButtonItem key="rightBarButtonItem" title="add" id="gko-zm-WSc">
                             <connections>
                                 <segue destination="a0B-nj-Zdv" kind="push" id="qtY-tK-HoW"/>
                             </connections>
@@ -160,16 +160,17 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addressTable" destination="Hw1-Dn-FDe" id="GrF-QX-fSb"/>
+                        <segue destination="YNo-I9-G1t" kind="modal" identifier="showDetail" id="3Pc-e9-dPf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYe-2l-T8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1957" y="-522"/>
         </scene>
-        <!--Map View Controller - Add Address-->
+        <!--Map View Controller - showDetail-->
         <scene sceneID="Pmg-ub-D15">
             <objects>
-                <viewController id="a0B-nj-Zdv" customClass="MapViewController" sceneMemberID="viewController">
+                <viewController title="showDetail" id="a0B-nj-Zdv" customClass="MapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7M0-Fv-ZuL"/>
                         <viewControllerLayoutGuide type="bottom" id="o8S-O5-8fI"/>
@@ -225,7 +226,6 @@
                                 <connections>
                                     <action selector="insertNewLocation:" destination="a0B-nj-Zdv" eventType="touchUpInside" id="eZh-ZV-qcu"/>
                                     <action selector="showPopUp:" destination="1o3-v7-t0t" eventType="touchUpInside" id="XMO-ns-iRy"/>
-                                    <segue destination="S4H-DA-GS5" kind="custom" customClass="MyPopSeque" id="xme-3n-cMb"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ArU-fH-P6e">
@@ -252,6 +252,7 @@
                         <outlet property="street" destination="3Y7-as-vVs" id="jlD-dz-y4f"/>
                         <outlet property="subViewMap" destination="ArU-fH-P6e" id="saz-Jr-cLy"/>
                         <outlet property="zipcode" destination="POh-ij-Qml" id="lgP-5n-qfE"/>
+                        <segue destination="YNo-I9-G1t" kind="modal" identifier="showDetail" id="P3z-Hc-cxO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ule-AR-gDj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -800,10 +801,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="S4H-DA-GS5" kind="relationship" relationship="viewControllers" id="57W-tc-jlp"/>
                         <segue destination="iW7-Pl-Tbf" kind="relationship" relationship="viewControllers" id="UtX-Ia-qry"/>
                         <segue destination="W59-5s-FIj" kind="relationship" relationship="viewControllers" id="LKU-aX-ABn"/>
                         <segue destination="dt6-bN-oWg" kind="relationship" relationship="viewControllers" id="RtO-GE-1On"/>
-                        <segue destination="S4H-DA-GS5" kind="relationship" relationship="viewControllers" id="57W-tc-jlp"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ds4-es-y1k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -879,8 +880,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Dzm-iE-gI2"/>
+        <segue reference="P3z-Hc-cxO"/>
         <segue reference="TVt-m7-KbB"/>
-        <segue reference="xme-3n-cMb"/>
+        <segue reference="57W-tc-jlp"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -228,23 +228,24 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
         }];
     
     }
-    NSLog(@"%@",preferredAddress);
+    //NSLog(@"%@",preferredAddress);
     PFUser *user = [PFUser currentUser];
     NSString *userID = user.objectId;
-    NSLog(@"Parse User ObjectID: %@",userID);
-    NSLog(@"%@",user);
+    //NSLog(@"Parse User ObjectID: %@",userID);
+    //NSLog(@"%@",user);
     [user setObject:preferredAddress forKey:@"preferredAddress"];
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
     if (!error) {
-     NSLog(@"user address saved");
-         NSLog(@"%@",preferredAddress);
+    //NSLog(@"user address saved");
+    //     NSLog(@"%@",preferredAddress);
+    [self performSegueWithIdentifier:@"showDetail" sender:self];
     } else {
      // There was an error saving the currentUser.
     }
-        NSLog(@"%@",user);
+    //    NSLog(@"%@",user);
 
     }];
-     NSLog(@"%@",user);
+    // NSLog(@"%@",user);
 
 }
 @end

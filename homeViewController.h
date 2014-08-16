@@ -23,7 +23,7 @@
 
 }
 @property (weak, nonatomic) IBOutlet UIButton *addressButton;
-
+@property (nonatomic, strong) PFObject *detailItem;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @property (strong, nonatomic) NSArray *imageFilesArray;
 @property (strong, nonatomic) NSMutableArray *imageArray;

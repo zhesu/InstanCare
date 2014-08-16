@@ -7,8 +7,11 @@
 //
 
 #import "addressViewController.h"
+#import "homeViewController.h"
 
-@interface addressViewController ()
+@interface addressViewController () {
+    NSString *preferredAddress;
+}
 
 @end
 
@@ -41,7 +44,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 
 //*********************Setup table of folder names ************************
@@ -83,7 +85,39 @@
     NSLog(@"cell tapped");
     PFObject *tempObject = [addressArray objectAtIndex:indexPath.row];
     NSLog(@"%@", tempObject.objectId);
+    NSLog(@"%@", [tempObject objectForKey:@"address"]);
+    // Configure the new event with information from the location.
+	//CLLocationCoordinate2D coordinate = [location coordinate];
+    preferredAddress = [NSString stringWithFormat:@"%@, %@ %@", [tempObject objectForKey:@"address"], [tempObject objectForKey:@"city"], [tempObject objectForKey:@"zipcode"]];
+    PFUser *user = [PFUser currentUser];
+    //NSString *userID = user.objectId;
+    //NSLog(@"Parse User ObjectID: %@",userID);
+    //NSLog(@"%@",user);
+    [user setObject:preferredAddress forKey:@"preferredAddress"];
+    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            //NSLog(@"user address saved");
+            //     NSLog(@"%@",preferredAddress);
+        } else {
+            // There was an error saving the currentUser.
+        }
+            NSLog(@"%@",user);
+        
+    }];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self performSegueWithIdentifier:@"showDetail" sender:self];
+    
 }
+
+/*
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showDetail"]) {
+        // Row selection
+        NSIndexPath *indexPath = [addressTable indexPathForSelectedRow];
+        PFObject *object = [addressArray objectAtIndex:indexPath.row];
+        [segue.destinationViewController setDetailItem:object];
+    }
+} */
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -105,6 +139,7 @@
     }
     
 }
+
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
