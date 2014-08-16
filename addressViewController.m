@@ -31,7 +31,7 @@
         if (!error) {
             addressArray = [[NSMutableArray alloc] initWithArray:objects];
         }
-        NSLog(@"%@", addressArray);
+        //NSLog(@"%@", addressArray);
         [addressTable reloadData];
     }];
 }

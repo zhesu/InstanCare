@@ -130,7 +130,7 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
 - (void)mapView:(GMSMapView *)mapView idleAtCameraPosition:(GMSCameraPosition *)cameraPosition {
     [[GMSGeocoder geocoder] reverseGeocodeCoordinate:cameraPosition.target completionHandler:^(GMSReverseGeocodeResponse* response, NSError* error) {
         GMSMarker *marker = [GMSMarker markerWithPosition:cameraPosition.target];
-        NSLog(@"reverse geocoding results:");
+        //NSLog(@"reverse geocoding results:");
         for(GMSAddress* addressObj in [response results])
         {
             //NSLog(@"coordinate.latitude=%f", addressObj.coordinate.latitude);
@@ -143,7 +143,7 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
                 currentAddress = addressObj.thoroughfare;
             }
 
-            NSLog(@"address=%@", currentAddress);
+            //NSLog(@"address=%@", currentAddress);
             //NSLog(@"locality=%@", addressObj.locality);
             //NSLog(@"subLocality=%@", addressObj.subLocality);
             //NSLog(@"administrativeArea=%@", addressObj.administrativeArea);
@@ -157,7 +157,7 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
                 currentZip = addressObj.postalCode;
             }
 
-            NSLog(@"zipcode=%@", currentZip);
+            //NSLog(@"zipcode=%@", currentZip);
             //NSLog(@"country=%@", addressObj.country);
             //NSLog(@"lines=%@", addressObj.lines);
         }
@@ -178,7 +178,7 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
 	// Configure the new event with information from the location.
 	//CLLocationCoordinate2D coordinate = [location coordinate];
     PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLatitude:currentLatitude longitude:currentLongitude];
-    NSLog(@"%@", geoPoint);
+    //NSLog(@"%@", geoPoint);
     PFObject *object = [PFObject objectWithClassName:@"tableView"];
     if (currentCity == NULL || currentAddress == NULL || currentZip == NULL) {
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Oooopss!" message:@"You entered an invalid address" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
