@@ -165,6 +165,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="insertNewLocation:" destination="a0B-nj-Zdv" eventType="touchUpInside" id="eZh-ZV-qcu"/>
                                     <action selector="showPopUp:" destination="1o3-v7-t0t" eventType="touchUpInside" id="XMO-ns-iRy"/>
                                 </connections>
                             </button>

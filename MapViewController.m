@@ -136,21 +136,28 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
             //NSLog(@"coordinate.latitude=%f", addressObj.coordinate.latitude);
             //NSLog(@"coordinate.longitude=%f", addressObj.coordinate.longitude);
             //NSLog(@"thoroughfare=%@", addressObj.thoroughfare);
+            currentLatitude = addressObj.coordinate.latitude;
+            currentLongitude = addressObj.coordinate.longitude;
             if (addressObj.thoroughfare!=NULL) {
                 self.street.text = addressObj.thoroughfare;
+                currentAddress = addressObj.thoroughfare;
             }
+
+            NSLog(@"address=%@", currentAddress);
             //NSLog(@"locality=%@", addressObj.locality);
             //NSLog(@"subLocality=%@", addressObj.subLocality);
             //NSLog(@"administrativeArea=%@", addressObj.administrativeArea);
             if (addressObj.thoroughfare!=NULL) {
                 self.city.text = [NSString stringWithFormat:@"%@, %@", addressObj.locality, addressObj.administrativeArea];
+                currentCity = self.city.text;
             }
-            
             //NSLog(@"postalCode=%@", addressObj.postalCode);
             if (addressObj.thoroughfare!=NULL) {
-            self.zipcode.text = addressObj.postalCode;
+                self.zipcode.text = addressObj.postalCode;
+                currentZip = addressObj.postalCode;
             }
 
+            NSLog(@"zipcode=%@", currentZip);
             //NSLog(@"country=%@", addressObj.country);
             //NSLog(@"lines=%@", addressObj.lines);
         }
@@ -158,6 +165,37 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
         //marker.snippet = response.firstResult.addressLine2;
         marker.map = mapView_;
     }];
+
+}
+- (IBAction)insertNewLocation:(id)sender {
+    
+    // If it's not possible to get a location, then return.
+/*	CLLocation *location = self.locationManager.location;
+	if (!location) {
+		return;
+	}
+*/
+	// Configure the new event with information from the location.
+	//CLLocationCoordinate2D coordinate = [location coordinate];
+    PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLatitude:currentLatitude longitude:currentLongitude];
+    NSLog(@"%@", geoPoint);
+    PFObject *object = [PFObject objectWithClassName:@"tableView"];
+    if (currentCity == NULL || currentAddress == NULL || currentZip == NULL) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle: @"Oooopss!" message:@"You entered an invalid address" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    } else {
+    [object setObject:geoPoint forKey:@"location"];
+    [object setObject:currentCity forKey:@"city"];
+    [object setObject:currentAddress forKey:@"address"];
+    [object setObject:currentZip forKey:@"zipcode"];
+    
+        [object saveEventually:^(BOOL succeeded, NSError *error) {
+            /*    if (succeeded) {
+             // Reload the PFQueryTableViewController
+             [self loadObjects];
+             }*/
+        }];
+    }
 
 }
 @end

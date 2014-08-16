@@ -70,7 +70,9 @@
     PFObject *tempObject = [addressArray objectAtIndex:indexPath.row];
     UIImage *image1 = [UIImage imageNamed:@"mappin.png"];
     cell.imageView.image = image1;
-    cell.textLabel.text = [tempObject objectForKey:@"cellTitle"];
+    NSString *fullAddress = [NSString stringWithFormat:@"%@, %@", [tempObject objectForKey:@"address"], [tempObject objectForKey:@"city"]];
+    
+    cell.textLabel.text = fullAddress;
     
     return cell;
 }

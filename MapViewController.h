@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <GoogleMaps/GoogleMaps.h>
-@interface MapViewController : UIViewController<GMSMapViewDelegate>
+#import <Parse/Parse.h>
+@interface MapViewController : UIViewController<GMSMapViewDelegate> {
+    CLLocationDegrees currentLatitude;
+    CLLocationDegrees currentLongitude;
+    NSString *currentAddress;
+    NSString *currentCity;
+    NSString *currentZip;
+    
+}
 @property (weak, nonatomic) IBOutlet UIView *subViewMap;
 @property (weak, nonatomic) IBOutlet UIImageView *mapPin;
 
@@ -16,5 +24,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *aptNumber;
 @property (weak, nonatomic) IBOutlet UITextField *city;
 @property (weak, nonatomic) IBOutlet UITextField *zipcode;
+- (IBAction)insertNewLocation:(id)sender;
+
 
 @end
