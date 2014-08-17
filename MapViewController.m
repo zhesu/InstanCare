@@ -230,7 +230,7 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
     }
     //NSLog(@"%@",preferredAddress);
     PFUser *user = [PFUser currentUser];
-    NSString *userID = user.objectId;
+    //NSString *userID = user.objectId;
     //NSLog(@"Parse User ObjectID: %@",userID);
     //NSLog(@"%@",user);
     [user setObject:preferredAddress forKey:@"preferredAddress"];

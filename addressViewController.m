@@ -98,14 +98,15 @@
         if (!error) {
             //NSLog(@"user address saved");
             //     NSLog(@"%@",preferredAddress);
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+            [self performSegueWithIdentifier:@"showDetail" sender:self];
         } else {
             // There was an error saving the currentUser.
         }
             NSLog(@"%@",user);
         
     }];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self performSegueWithIdentifier:@"showDetail" sender:self];
+    
     
 }
 

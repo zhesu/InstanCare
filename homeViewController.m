@@ -172,7 +172,7 @@
                                  placemark.administrativeArea,                                 placemark.postalCode];
             preferredAddress = tempaddress;
 
-/*            PFUser *user = [PFUser currentUser];
+            PFUser *user = [PFUser currentUser];
             [user setObject:preferredAddress forKey:@"preferredAddress"];
             [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (!error) {
@@ -181,7 +181,7 @@
                     // There was an error saving the currentUser.
                 }
             }];
-*/
+
         } else {
             
             NSLog(@"%@", error.debugDescription);
